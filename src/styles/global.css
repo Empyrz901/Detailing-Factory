@@ -86,11 +86,17 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-width: max-content;
+  min-width: 0;
   font-size: 0.95rem;
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.brand-name {
+  display: inline-flex;
+  gap: 0.35em;
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -309,6 +315,7 @@ h3 {
 p {
   color: var(--muted);
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .lead {
@@ -1149,10 +1156,14 @@ a.card:hover {
   }
 
   .brand span:last-child {
-    max-width: 132px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    max-width: none;
+  }
+
+  .brand-name {
+    display: grid;
+    gap: 0;
+    line-height: 0.95;
+    white-space: normal;
   }
 
   .brand {
@@ -1232,6 +1243,18 @@ a.card:hover {
 
   p {
     line-height: 1.62;
+  }
+
+  .lead,
+  .section-title p,
+  .card p,
+  .service-list p,
+  .ba-copy p,
+  .tariff-panel p,
+  .result-box small,
+  .site-footer p {
+    text-align: justify;
+    hyphens: auto;
   }
 
   .lead {
