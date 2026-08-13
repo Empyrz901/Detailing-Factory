@@ -18,6 +18,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
         <span class="pill">{business.googleRating} Google</span>
         <span class="pill">Produits professionnels</span>
         <span class="pill">Sur rendez-vous</span>
+        <span class="pill">Devis sur photos</span>
       </div>
     </div>
   </section>
@@ -28,6 +29,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
       <div class="grid">
         {services.map((service) => (
           <a class="card" href={service.href}>
+            <p class="eyebrow">Detailing Factory</p>
             <h3>{service.title}</h3>
             <p>{service.text}</p>
           </a>
@@ -83,9 +85,9 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
     <div class="section-inner">
       <SectionTitle eyebrow="Qualité" title="La qualité est dans les détails" text="Produits, machines, pads, microfibres, protections et méthode de travail doivent être montrés visuellement." />
       <div class="grid">
-        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=1200&q=80')"><h3>Préparation</h3></div>
-        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80')"><h3>Correction</h3></div>
-        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=1200&q=80')"><h3>Protection</h3></div>
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=1200&q=80')"><div><p class="eyebrow">01</p><h3>Préparation</h3></div></div>
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80')"><div><p class="eyebrow">02</p><h3>Correction</h3></div></div>
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=1200&q=80')"><div><p class="eyebrow">03</p><h3>Protection</h3></div></div>
       </div>
     </div>
   </section>
