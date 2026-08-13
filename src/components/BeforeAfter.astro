@@ -1,0 +1,17 @@
+---
+const { item } = Astro.props;
+---
+<article class="before-after">
+  <div class="ba-frame" data-before-after>
+    <img src={item.after} alt={`Après ${item.car}`} loading="lazy" />
+    <div class="ba-before">
+      <img src={item.before} alt={`Avant ${item.car}`} loading="lazy" />
+    </div>
+    <input type="range" min="8" max="92" value="50" aria-label="Comparer avant et après" />
+  </div>
+  <div class="ba-copy">
+    <p class="eyebrow">Prestation : {item.title}</p>
+    <h3>{item.car}</h3>
+    <p>{item.goal}</p>
+  </div>
+</article>

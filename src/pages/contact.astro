@@ -1,0 +1,29 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { business, whatsappUrl } from "@/data/site";
+---
+<BaseLayout title="Contact - Detailing Factory">
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Contact" title="Demander un devis ou préparer un rendez-vous" />
+      <div class="grid two">
+        <article class="card">
+          <h3>Detailing Factory - {business.city}</h3>
+          <p>{business.address}</p>
+          <p>{business.phoneDisplay}</p>
+          <p>{business.email}</p>
+          <p>Zone couverte : {business.area}</p>
+          <div class="actions">
+            <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis.")}>WhatsApp</a>
+            <a class="button secondary" href={business.mapUrl}>Itinéraire</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Message conseillé</h3>
+          <p>Bonjour, je souhaite obtenir un devis. Mon véhicule est une [marque/modèle]. Je cherche [lavage/intérieur/polissage/protection]. Je peux envoyer 3 à 5 photos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

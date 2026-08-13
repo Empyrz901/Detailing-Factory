@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import BeforeAfter from "@/components/BeforeAfter.astro";
+import { cases } from "@/data/site";
+---
+<BaseLayout title="Réalisations avant après - Detailing Factory">
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Réalisations" title="Avant / Après" text="À remplacer par les vraies photos et vidéos professionnelles du client dès qu'elles sont disponibles." />
+      {cases.map((item) => <BeforeAfter item={item} />)}
+    </div>
+  </section>
+</BaseLayout>

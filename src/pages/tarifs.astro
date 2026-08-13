@@ -1,0 +1,63 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+---
+<BaseLayout title="Tarifs detailing automobile - Detailing Factory">
+  <section class="section">
+    <div class="section-inner" data-pricing>
+      <SectionTitle eyebrow="Tarifs" title="Obtenir un tarif indicatif" text="Le client choisit son véhicule puis sa prestation. Le site évite les grands tableaux difficiles à lire." />
+      <h3>1. Choisir le véhicule</h3>
+      <div class="selector">
+        <label><input type="radio" name="price-vehicle" value="citadine" checked />Citadine</label>
+        <label><input type="radio" name="price-vehicle" value="berline" />Berline</label>
+        <label><input type="radio" name="price-vehicle" value="suv" />SUV</label>
+        <label><input type="radio" name="price-vehicle" value="grand_suv" />Grand SUV</label>
+      </div>
+      <h3>2. Choisir la prestation</h3>
+      <div class="selector">
+        <label><input type="radio" name="price-service" value="lavage" checked />Lavage</label>
+        <label><input type="radio" name="price-service" value="interieur" />Intérieur</label>
+        <label><input type="radio" name="price-service" value="polissage" />Polissage</label>
+        <label><input type="radio" name="price-service" value="protection" />Protection</label>
+      </div>
+      <div class="result-box" data-price-output></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner" data-configurator>
+      <SectionTitle eyebrow="Configurateur" title="Estimez votre prestation en 30 secondes" />
+      <h3>Votre véhicule</h3>
+      <div class="selector">
+        <label><input type="radio" name="config-vehicle" value="citadine" checked />Citadine</label>
+        <label><input type="radio" name="config-vehicle" value="berline" />Berline</label>
+        <label><input type="radio" name="config-vehicle" value="suv" />SUV</label>
+        <label><input type="radio" name="config-vehicle" value="grand_suv" />Grand SUV</label>
+      </div>
+      <h3>Votre besoin</h3>
+      <div class="selector">
+        <label><input type="radio" name="config-need" value="lavage" checked />Nettoyer</label>
+        <label><input type="radio" name="config-need" value="brillance" />Brillance</label>
+        <label><input type="radio" name="config-need" value="micro-rayures" />Micro-rayures</label>
+        <label><input type="radio" name="config-need" value="defauts" />Défauts</label>
+        <label><input type="radio" name="config-need" value="protection" />Protéger</label>
+        <label><input type="radio" name="config-need" value="interieur" />Intérieur</label>
+      </div>
+      <h3>État du véhicule</h3>
+      <div class="selector">
+        <label><input type="radio" name="config-condition" value="Bon" checked />Bon</label>
+        <label><input type="radio" name="config-condition" value="Moyen" />Moyen</label>
+        <label><input type="radio" name="config-condition" value="Mauvais" />Mauvais</label>
+      </div>
+      <h3>Résultat recherché</h3>
+      <div class="selector">
+        <label><input type="radio" name="config-finish" value="Propre" checked />Propre</label>
+        <label><input type="radio" name="config-finish" value="Brillant" />Brillant</label>
+        <label><input type="radio" name="config-finish" value="Corrigé" />Corrigé</label>
+        <label><input type="radio" name="config-finish" value="Protégé" />Protégé</label>
+      </div>
+      <div class="result-box" data-config-result></div>
+      <div class="actions"><a class="button" data-config-whatsapp href="#">Recevoir mon estimation sur WhatsApp</a></div>
+    </div>
+  </section>
+</BaseLayout>

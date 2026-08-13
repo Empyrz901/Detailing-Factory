@@ -1,0 +1,28 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { whatsappUrl } from "@/data/site";
+---
+<BaseLayout title="Protection longue durée automobile - Detailing Factory">
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Protection" title="Protection longue durée" text="Une protection se choisit selon le véhicule, son usage, son exposition et le niveau d'entretien souhaité." />
+      <div class="grid">
+        <article class="card"><h3>1 an</h3><p>Protection accessible pour faciliter l'entretien et améliorer le rendu.</p></article>
+        <article class="card"><h3>2 ans</h3><p>Durabilité supérieure pour les véhicules exposés régulièrement.</p></article>
+        <article class="card"><h3>3 ans</h3><p>Solution premium avec préparation poussée et protection durable.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Méthode" title="Préparation, application, entretien" />
+      <div class="steps">
+        <div class="step"><div><h3>Préparation</h3><p>Nettoyage, décontamination et préparation de surface.</p></div></div>
+        <div class="step"><div><h3>Application</h3><p>Pose contrôlée de la protection adaptée.</p></div></div>
+        <div class="step"><div><h3>Entretien</h3><p>Conseils pour préserver le rendu et la durabilité.</p></div></div>
+      </div>
+      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite trouver la protection adaptée à mon véhicule.")}>Trouver ma protection</a></div>
+    </div>
+  </section>
+</BaseLayout>

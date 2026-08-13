@@ -1,0 +1,131 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import BeforeAfter from "@/components/BeforeAfter.astro";
+import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Brillance • Protection • Remise à neuf</p>
+      <h1>Detailing Factory</h1>
+      <p class="lead">Le detailing automobile pensé pour révéler, protéger et préserver votre véhicule.</p>
+      <div class="hero-actions">
+        <a class="button" href="/reservation/">Prendre rendez-vous</a>
+        <a class="button secondary" href="/tarifs/">Obtenir mon devis</a>
+      </div>
+      <div class="trust-row">
+        <span class="pill">{business.googleRating} Google</span>
+        <span class="pill">Produits professionnels</span>
+        <span class="pill">Sur rendez-vous</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Parcours guidé" title="Que souhaitez-vous faire sur votre véhicule ?" text="Le client choisit son besoin, pas un jargon technique. Le site l'oriente vers la prestation adaptée." />
+      <div class="grid">
+        {services.map((service) => (
+          <a class="card" href={service.href}>
+            <h3>{service.title}</h3>
+            <p>{service.text}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Positionnement" title="Plus qu'un simple lavage" text="Un lavage nettoie. Le detailing va plus loin : il améliore la finition, protège les surfaces et s'adapte à l'état réel du véhicule." />
+      <div class="compare-table">
+        <div>Lavage classique</div><div>Detailing Factory</div>
+        <div>Nettoyage rapide</div><div>Travail minutieux</div>
+        <div>Surface nettoyée</div><div>Détails, recoins et finitions</div>
+        <div>Prestation standard</div><div>Travail adapté au véhicule</div>
+        <div>Objectif : propre</div><div>Objectif : propre, brillant et préservé</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Avant / Après" title="Le résultat parle de lui-même" text="Les réalisations doivent devenir la preuve principale du savoir-faire." />
+      {cases.map((item) => <BeforeAfter item={item} />)}
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Polissage" title="Des niveaux de correction simples à comprendre" />
+      <div class="grid">
+        <article class="card">
+          <h3>Gloss Enhancement</h3>
+          <p>Retrouver de la profondeur et de la brillance sur une peinture terne ou manquant d'éclat.</p>
+        </article>
+        <article class="card">
+          <h3>One Step</h3>
+          <p>Correction légère des micro-rayures avec une forte amélioration visuelle.</p>
+        </article>
+        <article class="card">
+          <h3>Two Step</h3>
+          <p>Correction avancée et finition poussée pour les véhicules nécessitant plus de travail.</p>
+        </article>
+      </div>
+      <div class="actions">
+        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je ne sais pas quelle prestation choisir. Je peux envoyer des photos de mon véhicule.")}>Envoyer des photos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Qualité" title="La qualité est dans les détails" text="Produits, machines, pads, microfibres, protections et méthode de travail doivent être montrés visuellement." />
+      <div class="grid">
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=1200&q=80')"><h3>Préparation</h3></div>
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80')"><h3>Correction</h3></div>
+        <div class="media-card" style="--image:url('https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=1200&q=80')"><h3>Protection</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Confiance" title="Notre engagement" />
+      <div class="grid">
+        <article class="card"><h3>01 - Transparence</h3><p>Pas de mauvaise surprise : les tarifs sont annoncés comme indicatifs et confirmés après analyse.</p></article>
+        <article class="card"><h3>02 - Précision</h3><p>Chaque véhicule est traité selon son état, son usage et le niveau de finition souhaité.</p></article>
+        <article class="card"><h3>03 - Qualité</h3><p>Produits et méthodes professionnels, contrôle du résultat avant restitution.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Local" title={`Detailing Factory - ${business.city}`} text={`Votre spécialiste du detailing automobile dans ${business.area}. Adresse, accès, horaires et itinéraire doivent soutenir le référencement local.`} />
+      <div class="grid two">
+        <div class="card">
+          <h3>Vous venez pour votre rendez-vous ?</h3>
+          <p>{business.address}</p>
+          <p>Horaires : sur rendez-vous.</p>
+          <a class="button secondary" href={business.mapUrl}>Itinéraire</a>
+        </div>
+        <div class="card">
+          <h3>Besoin d'un tarif précis ?</h3>
+          <p>Envoyez 3 à 5 photos : vue globale, défauts visibles et zones à traiter.</p>
+          <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un tarif précis. Je vais envoyer 3 à 5 photos de mon véhicule.")}>Demander une estimation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="FAQ" title="Questions fréquentes" />
+      <div class="grid two">
+        {faqs.map((faq) => <article class="card"><h3>{faq.q}</h3><p>{faq.a}</p></article>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

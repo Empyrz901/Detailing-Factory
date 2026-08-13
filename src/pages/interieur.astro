@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { whatsappUrl } from "@/data/site";
+---
+<BaseLayout title="Detailing intérieur automobile - Detailing Factory">
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Intérieur" title="Detailing intérieur" text="Une page dédiée aux besoins concrets : traces, poussière, tissus, plastiques, odeurs, poils d'animaux et intérieurs très sales." />
+      <div class="grid">
+        <article class="card"><h3>Formule express</h3><p>Nettoyage efficace pour un intérieur entretenu régulièrement.</p></article>
+        <article class="card"><h3>Sièges et textiles</h3><p>Traitement selon matière, taches visibles et niveau d'encrassement.</p></article>
+        <article class="card"><h3>Options</h3><p>Plafonnier, plastiques, tapis, moquettes et poils d'animaux.</p></article>
+      </div>
+      <div class="result-box" style="margin-top:24px">
+        <span>Votre intérieur est très sale ?</span>
+        <strong>Envoyez des photos</strong>
+        <small>Une estimation personnalisée évite les incompréhensions avant rendez-vous.</small>
+      </div>
+      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite une estimation pour un detailing intérieur. Je vais envoyer des photos.")}>Envoyer mes photos</a></div>
+    </div>
+  </section>
+</BaseLayout>

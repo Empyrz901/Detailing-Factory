@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import { business, whatsappUrl } from "@/data/site";
+
+const {
+  title = "Detailing Factory - Detailing automobile premium",
+  description = "Detailing automobile premium, polissage, protection longue durée, lavage et intérieur sur rendez-vous.",
+  canonical = Astro.url.pathname
+} = Astro.props;
+
+const nav = [
+  ["Accueil", "/"],
+  ["Prestations", "/prestations/"],
+  ["Polissage", "/polissage/"],
+  ["Protection", "/protection/"],
+  ["Tarifs", "/tarifs/"],
+  ["Réalisations", "/realisations/"],
+  ["Avis", "/avis/"],
+  ["À propos", "/a-propos/"],
+  ["Contact", "/contact/"]
+];
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(canonical, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#101411" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Accueil Detailing Factory">
+        <span class="brand-mark">DF</span>
+        <span>{business.name}</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" data-menu>
+        {nav.map(([label, href]) => <a href={href}>{label}</a>)}
+        <a class="nav-cta" href="/reservation/">Prendre rendez-vous</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div>
+        <strong>{business.name}</strong>
+        <p>Brillance, protection et remise à neuf automobile à {business.city}.</p>
+      </div>
+      <div>
+        <a href="/mentions-legales/">Mentions légales</a>
+        <a href="/confidentialite/">Confidentialité</a>
+        <a href="/conditions/">Conditions de réservation</a>
+      </div>
+    </footer>
+    <a class="floating-whatsapp" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis.")}>WhatsApp</a>
+    <script src="/scripts/interactions.js" defer></script>
+  </body>
+</html>
