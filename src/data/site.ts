@@ -96,24 +96,21 @@ export const interiorOptions = [
 export const cases = [
   {
     title: "One Step",
-    car: "BMW Série 3",
+    car: "Berline noire",
     goal: "Correction des micro-rayures et amélioration de la brillance.",
-    before: "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=80",
-    after: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1200&q=80"
   },
   {
     title: "Protection longue durée",
-    car: "Porsche 911",
+    car: "Coupé sport",
     goal: "Préparation de la carrosserie et protection hydrophobe.",
-    before: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80",
-    after: "https://images.unsplash.com/photo-1549925862-990301a62b15?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
   },
   {
     title: "Detailing intérieur",
-    car: "Mercedes Classe C",
+    car: "Habitacle premium",
     goal: "Nettoyage précis des textiles, plastiques et zones de contact.",
-    before: "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80",
-    after: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
+    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
   }
 ];
 

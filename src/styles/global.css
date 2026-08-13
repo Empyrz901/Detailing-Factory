@@ -588,6 +588,7 @@ a.card:hover {
 
 .ba-before img {
   width: max(100%, 1180px);
+  filter: grayscale(0.55) brightness(0.56) contrast(0.92) saturate(0.65);
 }
 
 .ba-frame input {
@@ -595,6 +596,30 @@ a.card:hover {
   inset: auto 20px 20px;
   width: calc(100% - 40px);
   accent-color: var(--gold);
+}
+
+.ba-label {
+  position: absolute;
+  top: 18px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(8, 9, 9, 0.68);
+  color: var(--soft);
+  padding: 7px 10px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+}
+
+.ba-label.before {
+  left: 18px;
+}
+
+.ba-label.after {
+  right: 18px;
 }
 
 .ba-copy {
