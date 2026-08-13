@@ -1,11 +1,11 @@
 export const business = {
   name: "Detailing Factory",
-  city: "Canton de Vaud",
-  area: "Canton de Vaud et alentours",
+  city: "canton de Vaud",
+  area: "canton de Vaud et alentours",
   phoneDisplay: "+41 76 123 45 67",
   whatsappNumber: "41761234567",
   email: "contact@detailing-factory.ch",
-  address: "Déplacement à domicile - Canton de Vaud",
+  address: "Déplacement à domicile - canton de Vaud",
   instagram: "@detailing_factory_ch",
   googleRating: "5.0",
   mapUrl: "https://maps.google.com/?q=Detailing%20Factory"
