@@ -595,7 +595,6 @@ a.card:hover {
 
 .ba-before img {
   width: max(100%, 1180px);
-  filter: grayscale(0.55) brightness(0.56) contrast(0.92) saturate(0.65);
 }
 
 .ba-frame input {
@@ -627,6 +626,47 @@ a.card:hover {
 
 .ba-label.after {
   right: 18px;
+}
+
+.ba-placeholder {
+  min-height: 430px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px 0 0 8px;
+  background:
+    linear-gradient(135deg, rgba(214, 181, 109, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012)),
+    #080909;
+  box-shadow: var(--shadow);
+}
+
+.ba-placeholder > div {
+  display: grid;
+  align-content: end;
+  min-height: 100%;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.ba-placeholder > div:first-child {
+  border-right: 1px solid var(--line);
+}
+
+.ba-placeholder span {
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ba-placeholder strong {
+  max-width: 260px;
+  margin-top: 10px;
+  color: var(--text);
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  line-height: 1.05;
 }
 
 .ba-copy {
@@ -1138,6 +1178,11 @@ a.card:hover {
     border-radius: 8px 8px 0 0;
   }
 
+  .ba-placeholder {
+    min-height: 360px;
+    border-radius: 8px 8px 0 0;
+  }
+
   .ba-copy {
     border-radius: 0 0 8px 8px;
   }
@@ -1312,6 +1357,20 @@ a.card:hover {
 
   .ba-frame {
     min-height: 260px;
+  }
+
+  .ba-placeholder {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .ba-placeholder > div {
+    min-height: 170px;
+  }
+
+  .ba-placeholder > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
 
   .media-card {

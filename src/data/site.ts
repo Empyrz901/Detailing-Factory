@@ -96,21 +96,24 @@ export const interiorOptions = [
 export const cases = [
   {
     title: "One Step",
-    car: "Berline noire",
-    goal: "Correction des micro-rayures et amélioration de la brillance.",
-    image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1200&q=80"
+    car: "Véhicule client",
+    goal: "Correction des micro-rayures et amélioration de la brillance. Ajouter deux photos réelles du même véhicule, prises sous le même angle.",
+    before: "",
+    after: ""
   },
   {
     title: "Protection longue durée",
-    car: "Coupé sport",
-    goal: "Préparation de la carrosserie et protection hydrophobe.",
-    image: "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
+    car: "Véhicule client",
+    goal: "Préparation de la carrosserie et protection hydrophobe. Ajouter deux photos réelles du même véhicule, prises sous le même angle.",
+    before: "",
+    after: ""
   },
   {
     title: "Detailing intérieur",
-    car: "Habitacle premium",
-    goal: "Nettoyage précis des textiles, plastiques et zones de contact.",
-    image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80"
+    car: "Intérieur client",
+    goal: "Nettoyage précis des textiles, plastiques et zones de contact. Ajouter deux photos réelles de la même zone intérieure.",
+    before: "",
+    after: ""
   }
 ];
 
