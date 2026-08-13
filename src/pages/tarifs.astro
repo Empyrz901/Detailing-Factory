@@ -1,11 +1,136 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
+import { ceramicPrices, exteriorPrices, interiorOptions, polishingPrices, whatsappUrl } from "@/data/site";
+
+const vehicles = [
+  ["citadine", "Citadine"],
+  ["berline", "Berline"],
+  ["suv", "SUV"],
+  ["grand_suv", "Grand SUV"]
+];
 ---
 <BaseLayout title="Tarifs detailing automobile - Detailing Factory">
+  <section class="section tariff-hero">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Tarifs" title="Des prix clairs, une finition premium" text="Les tarifs restent indicatifs : l'état réel du véhicule, la contamination et le niveau de correction peuvent modifier l'estimation finale." />
+      <div class="tariff-actions">
+        <a class="button" href="#configurateur">Estimer ma prestation</a>
+        <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis. Je peux envoyer des photos de mon véhicule.")}>Envoyer des photos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Polissage" title="Gloss Enhancement, One Step, Two Step" text="Correction des micro-rayures, brillance et remise en profondeur selon le résultat recherché." />
+      <div class="price-table wide">
+        <div class="price-row head">
+          <span>Prestation</span>
+          {vehicles.map(([, label]) => <span>{label}</span>)}
+        </div>
+        {polishingPrices.map((row) => (
+          <div class="price-row">
+            <span><strong>{row.service}</strong><small>{row.detail}</small></span>
+            {vehicles.map(([key]) => <span><strong>{row[key]} CHF</strong></span>)}
+          </div>
+        ))}
+      </div>
+      <div class="piece-strip">
+        <div><strong>Polissage à la pièce</strong><small>Tarif au détail, sans forfait complet</small></div>
+        <div><span>1 élément</span><strong>150 CHF</strong></div>
+        <div><span>2 éléments</span><strong>250 CHF</strong></div>
+        <div><span>3 éléments</span><strong>300 CHF</strong></div>
+      </div>
+    </div>
+  </section>
+
   <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Protection céramique" title="Protection longue durée" text="Protection contre les agressions extérieures, les UV, les produits chimiques et les salissures." />
+      <div class="benefit-row">
+        <span>Hydrophobie extrême</span>
+        <span>Brillance durable</span>
+        <span>Protection longue durée</span>
+      </div>
+      <div class="price-table wide">
+        <div class="price-row head">
+          <span>Durée</span>
+          {vehicles.map(([, label]) => <span>{label}</span>)}
+        </div>
+        {ceramicPrices.map((row) => (
+          <div class="price-row">
+            <span><strong>{row.duration}</strong></span>
+            {vehicles.map(([key]) => <span><strong>{row[key]} CHF</strong></span>)}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Lavage" title="Lavage complet ou nettoyage extérieur express" />
+      <div class="grid two">
+        <article class="tariff-panel">
+          <p class="eyebrow">Lavage complet</p>
+          <h3>Nettoyage en profondeur</h3>
+          <ul>
+            <li>Jantes, pneus et passages de roues</li>
+            <li>Prélavage haute pression et mousse active</li>
+            <li>Décontamination carrosserie</li>
+            <li>Lavage manuel méthode deux seaux</li>
+            <li>Séchage microfibre / souffleur</li>
+            <li>Détails extérieurs, recoins et vitres</li>
+          </ul>
+          <div class="mini-table">
+            {exteriorPrices.map((row) => <div><span>{row.vehicle}</span><strong>{row.complet} CHF</strong></div>)}
+          </div>
+        </article>
+        <article class="tariff-panel silver">
+          <p class="eyebrow">Nettoyage extérieur express</p>
+          <h3>L'essentiel propre et éclatant</h3>
+          <ul>
+            <li>Prélavage</li>
+            <li>Mousse active</li>
+            <li>Rinçage</li>
+            <li>Lavage manuel</li>
+            <li>Séchage complet</li>
+            <li>Finition rapide</li>
+          </ul>
+          <div class="mini-table">
+            {exteriorPrices.filter((row) => row.express).map((row) => <div><span>{row.vehicle}</span><strong>{row.express} CHF</strong></div>)}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Intérieur" title="Formule express et options à la carte" />
+      <div class="interior-price">
+        <div>
+          <p class="eyebrow">Formule express</p>
+          <h3>Rapide et efficace</h3>
+          <p>Aspirateur complet habitacle et coffre, finition soignée, nettoyage des vitres intérieures et extérieures.</p>
+        </div>
+        <div class="big-price"><strong>60 CHF</strong><span>à partir de</span></div>
+      </div>
+      <div class="vehicle-strip">
+        <div><span>Citadine</span><strong>60 CHF</strong></div>
+        <div><span>Berline</span><strong>80 CHF</strong></div>
+        <div><span>Espace / 4x4</span><strong>100 CHF</strong></div>
+      </div>
+      <div class="option-grid">
+        {interiorOptions.map((option) => <article><h3>{option.name}</h3><strong>{option.price} CHF</strong></article>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="configurateur">
     <div class="section-inner" data-pricing>
-      <SectionTitle eyebrow="Tarifs" title="Obtenir un tarif indicatif" text="Le client choisit son véhicule puis sa prestation. Le site évite les grands tableaux difficiles à lire." />
+      <SectionTitle eyebrow="Configurateur rapide" title="Obtenir un tarif indicatif" text="Choisissez votre véhicule et votre besoin principal. Le message WhatsApp final peut ensuite être complété avec vos photos." />
       <h3>1. Choisir le véhicule</h3>
       <div class="selector">
         <label><input type="radio" name="price-vehicle" value="citadine" checked />Citadine</label>
@@ -15,49 +140,12 @@ import SectionTitle from "@/components/SectionTitle.astro";
       </div>
       <h3>2. Choisir la prestation</h3>
       <div class="selector">
-        <label><input type="radio" name="price-service" value="lavage" checked />Lavage</label>
-        <label><input type="radio" name="price-service" value="interieur" />Intérieur</label>
-        <label><input type="radio" name="price-service" value="polissage" />Polissage</label>
-        <label><input type="radio" name="price-service" value="protection" />Protection</label>
+        <label><input type="radio" name="price-service" value="lavage" checked />Lavage complet</label>
+        <label><input type="radio" name="price-service" value="interieur" />Intérieur express</label>
+        <label><input type="radio" name="price-service" value="polissage" />Gloss Enhancement</label>
+        <label><input type="radio" name="price-service" value="protection" />Protection 1 an</label>
       </div>
       <div class="result-box" data-price-output></div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="section-inner" data-configurator>
-      <SectionTitle eyebrow="Configurateur" title="Estimez votre prestation en 30 secondes" />
-      <h3>Votre véhicule</h3>
-      <div class="selector">
-        <label><input type="radio" name="config-vehicle" value="citadine" checked />Citadine</label>
-        <label><input type="radio" name="config-vehicle" value="berline" />Berline</label>
-        <label><input type="radio" name="config-vehicle" value="suv" />SUV</label>
-        <label><input type="radio" name="config-vehicle" value="grand_suv" />Grand SUV</label>
-      </div>
-      <h3>Votre besoin</h3>
-      <div class="selector">
-        <label><input type="radio" name="config-need" value="lavage" checked />Nettoyer</label>
-        <label><input type="radio" name="config-need" value="brillance" />Brillance</label>
-        <label><input type="radio" name="config-need" value="micro-rayures" />Micro-rayures</label>
-        <label><input type="radio" name="config-need" value="defauts" />Défauts</label>
-        <label><input type="radio" name="config-need" value="protection" />Protéger</label>
-        <label><input type="radio" name="config-need" value="interieur" />Intérieur</label>
-      </div>
-      <h3>État du véhicule</h3>
-      <div class="selector">
-        <label><input type="radio" name="config-condition" value="Bon" checked />Bon</label>
-        <label><input type="radio" name="config-condition" value="Moyen" />Moyen</label>
-        <label><input type="radio" name="config-condition" value="Mauvais" />Mauvais</label>
-      </div>
-      <h3>Résultat recherché</h3>
-      <div class="selector">
-        <label><input type="radio" name="config-finish" value="Propre" checked />Propre</label>
-        <label><input type="radio" name="config-finish" value="Brillant" />Brillant</label>
-        <label><input type="radio" name="config-finish" value="Corrigé" />Corrigé</label>
-        <label><input type="radio" name="config-finish" value="Protégé" />Protégé</label>
-      </div>
-      <div class="result-box" data-config-result></div>
-      <div class="actions"><a class="button" data-config-whatsapp href="#">Recevoir mon estimation sur WhatsApp</a></div>
     </div>
   </section>
 </BaseLayout>

@@ -1,12 +1,12 @@
 export const business = {
   name: "Detailing Factory",
-  city: "[VILLE]",
-  area: "[ZONE]",
-  phoneDisplay: "+41 XX XXX XX XX",
-  whatsappNumber: "41790000000",
+  city: "Canton de Vaud",
+  area: "Canton de Vaud et alentours",
+  phoneDisplay: "+41 76 123 45 67",
+  whatsappNumber: "41761234567",
   email: "contact@detailing-factory.ch",
-  address: "[ADRESSE COMPLETE]",
-  instagram: "@DetailingFactory",
+  address: "Déplacement à domicile - Canton de Vaud",
+  instagram: "@detailing_factory_ch",
   googleRating: "5.0",
   mapUrl: "https://maps.google.com/?q=Detailing%20Factory"
 };
@@ -45,10 +45,10 @@ export const services = [
 ];
 
 export const priceMatrix = {
-  citadine: { lavage: 79, interieur: 129, polissage: 290, protection: 390 },
-  berline: { lavage: 89, interieur: 149, polissage: 340, protection: 450 },
-  suv: { lavage: 109, interieur: 179, polissage: 420, protection: 540 },
-  grand_suv: { lavage: 129, interieur: 219, polissage: 520, protection: 650 }
+  citadine: { lavage: 119, interieur: 60, polissage: 300, protection: 250 },
+  berline: { lavage: 129, interieur: 80, polissage: 350, protection: 300 },
+  suv: { lavage: 149, interieur: 100, polissage: 400, protection: 350 },
+  grand_suv: { lavage: 160, interieur: 100, polissage: 450, protection: 400 }
 };
 
 export const vehicles = {
@@ -64,6 +64,34 @@ export const prestationLabels = {
   polissage: "Polissage",
   protection: "Protection"
 };
+
+export const polishingPrices = [
+  { service: "Gloss Enhancement", detail: "Brillance express", citadine: 300, berline: 350, suv: 400, grand_suv: 450 },
+  { service: "One Step", detail: "Correction légère et brillance intense", citadine: 450, berline: 550, suv: 650, grand_suv: 750 },
+  { service: "Two Step", detail: "Correction avancée et finition parfaite", citadine: 750, berline: 900, suv: 1050, grand_suv: 1200 }
+];
+
+export const ceramicPrices = [
+  { duration: "1 an", citadine: 250, berline: 300, suv: 350, grand_suv: 400 },
+  { duration: "2 ans", citadine: 550, berline: 650, suv: 750, grand_suv: 850 },
+  { duration: "3 ans", citadine: 800, berline: 950, suv: 1100, grand_suv: 1250 }
+];
+
+export const exteriorPrices = [
+  { vehicle: "Petite voiture", express: 59, complet: 119 },
+  { vehicle: "Berline / compacte", express: 69, complet: 129 },
+  { vehicle: "Grande voiture", express: 79, complet: 139 },
+  { vehicle: "SUV / 4x4", express: 89, complet: 149 },
+  { vehicle: "Gros SUV / véhicule très sale", express: null, complet: 160 }
+];
+
+export const interiorOptions = [
+  { name: "Plafonnier", price: 50 },
+  { name: "Sièges en tissus", price: 30 },
+  { name: "Poils de chiens", price: 40 },
+  { name: "Plastiques", price: 20 },
+  { name: "Dressing tapis", price: 10 }
+];
 
 export const cases = [
   {

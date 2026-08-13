@@ -20,10 +20,10 @@ document.querySelectorAll("[data-before-after]").forEach((frame) => {
 });
 
 const prices = {
-  citadine: { lavage: 79, interieur: 129, polissage: 290, protection: 390 },
-  berline: { lavage: 89, interieur: 149, polissage: 340, protection: 450 },
-  suv: { lavage: 109, interieur: 179, polissage: 420, protection: 540 },
-  grand_suv: { lavage: 129, interieur: 219, polissage: 520, protection: 650 }
+  citadine: { lavage: 119, interieur: 60, polissage: 300, protection: 250 },
+  berline: { lavage: 129, interieur: 80, polissage: 350, protection: 300 },
+  suv: { lavage: 149, interieur: 100, polissage: 400, protection: 350 },
+  grand_suv: { lavage: 160, interieur: 100, polissage: 450, protection: 400 }
 };
 
 const vehicleLabels = {
@@ -34,10 +34,10 @@ const vehicleLabels = {
 };
 
 const serviceLabels = {
-  lavage: "Lavage",
-  interieur: "Intérieur",
-  polissage: "Polissage",
-  protection: "Protection"
+  lavage: "Lavage complet",
+  interieur: "Intérieur express",
+  polissage: "Gloss Enhancement",
+  protection: "Protection céramique 1 an"
 };
 
 function selectedValue(name) {
@@ -78,7 +78,7 @@ if (configurator) {
     const price = prices[vehicle]?.[family] || prices.citadine.polissage;
     result.innerHTML = `<span>Votre prestation semble correspondre à</span><strong>${recommendation}</strong><small>À partir de ${price} CHF, à confirmer après analyse des photos.</small>`;
     const message = `Bonjour Detailing Factory,\n\nJe souhaite recevoir une estimation.\n\nVéhicule : ${vehicleLabels[vehicle] || "Non précisé"}\nBesoin : ${recommendation}\nRésultat recherché : ${finish || "Non précisé"}\nÉtat : ${condition || "Non précisé"}\n\nJe peux envoyer des photos du véhicule.`;
-    cta.href = `https://wa.me/41790000000?text=${encodeURIComponent(message)}`;
+    cta.href = `https://wa.me/41761234567?text=${encodeURIComponent(message)}`;
   };
   configurator.querySelectorAll("input").forEach((input) => input.addEventListener("change", updateConfig));
   updateConfig();

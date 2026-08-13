@@ -1,16 +1,28 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
-import { whatsappUrl } from "@/data/site";
+import { ceramicPrices, whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title="Protection longue durée automobile - Detailing Factory">
+<BaseLayout title="Protection céramique automobile - Detailing Factory">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Protection" title="Protection longue durée" text="Une protection se choisit selon le véhicule, son usage, son exposition et le niveau d'entretien souhaité." />
-      <div class="grid">
-        <article class="card"><h3>1 an</h3><p>Protection accessible pour faciliter l'entretien et améliorer le rendu.</p></article>
-        <article class="card"><h3>2 ans</h3><p>Durabilité supérieure pour les véhicules exposés régulièrement.</p></article>
-        <article class="card"><h3>3 ans</h3><p>Solution premium avec préparation poussée et protection durable.</p></article>
+      <SectionTitle eyebrow="Protection céramique" title="Protection longue durée" text="Protection contre les agressions extérieures, les UV, les produits chimiques et les salissures." />
+      <div class="benefit-row">
+        <span>Hydrophobie extrême</span>
+        <span>Brillance durable</span>
+        <span>Protection longue durée</span>
+      </div>
+      <div class="price-table wide">
+        <div class="price-row head"><span>Durée</span><span>Citadine</span><span>Berline</span><span>SUV</span><span>Grand SUV</span></div>
+        {ceramicPrices.map((row) => (
+          <div class="price-row">
+            <span><strong>{row.duration}</strong></span>
+            <span><strong>{row.citadine} CHF</strong></span>
+            <span><strong>{row.berline} CHF</strong></span>
+            <span><strong>{row.suv} CHF</strong></span>
+            <span><strong>{row.grand_suv} CHF</strong></span>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -2,23 +2,23 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import BeforeAfter from "@/components/BeforeAfter.astro";
-import { business, cases, whatsappUrl } from "@/data/site";
+import { business, cases, polishingPrices, whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title={`Polissage voiture ${business.city} - Detailing Factory`} description={`Polissage voiture à ${business.city}. Gloss Enhancement, One Step, Two Step et correction des micro-rayures sur rendez-vous.`}>
+<BaseLayout title={`Polissage voiture ${business.city} - Detailing Factory`} description={`Polissage voiture dans le ${business.city}. Gloss Enhancement, One Step, Two Step et correction des micro-rayures sur rendez-vous.`}>
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Polissage voiture {business.city}</p>
-      <h1>Corriger, révéler, protéger</h1>
-      <p class="lead">Une page dédiée pour transformer les recherches Google en demandes de devis qualifiées.</p>
+      <p class="eyebrow">Polissage voiture - {business.city}</p>
+      <h1>Polissage One Step</h1>
+      <p class="lead">Éliminer les micro-rayures, raviver la brillance et redonner de l'éclat à votre véhicule.</p>
       <div class="hero-actions">
-        <a class="button" href="/tarifs/">Estimer mon polissage</a>
+        <a class="button" href="/tarifs/">Voir les tarifs</a>
         <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un devis pour un polissage voiture.")}>Envoyer des photos</a>
       </div>
     </div>
   </section>
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Problème" title="Micro-rayures, voile terne, manque de profondeur" text="Le polissage améliore la lisibilité de la peinture et restaure une finition plus nette. Le niveau dépend de l'état du véhicule." />
+      <SectionTitle eyebrow="Méthode" title="Micro-rayures, voile terne, manque de profondeur" text="Le polissage améliore la lisibilité de la peinture et restaure une finition plus nette. Le niveau dépend de l'état du véhicule." />
       <div class="steps">
         <div class="step"><div><h3>Analyse</h3><p>Inspection visuelle, photos ou contrôle sur place pour comprendre les défauts.</p></div></div>
         <div class="step"><div><h3>Préparation</h3><p>Lavage, décontamination et masquage des zones sensibles.</p></div></div>
@@ -35,11 +35,18 @@ import { business, cases, whatsappUrl } from "@/data/site";
   </section>
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Niveaux" title="Choisir sans connaître la technique" />
-      <div class="grid">
-        <article class="card"><h3>Gloss Enhancement</h3><p>Pour une peinture terne ou un entretien esthétique premium.</p></article>
-        <article class="card"><h3>One Step</h3><p>Pour les micro-rayures et une amélioration visuelle marquée.</p></article>
-        <article class="card"><h3>Two Step</h3><p>Pour une correction plus avancée avec finition poussée.</p></article>
+      <SectionTitle eyebrow="Tarifs polissage" title="Choisir le bon niveau de correction" />
+      <div class="price-table wide">
+        <div class="price-row head"><span>Prestation</span><span>Citadine</span><span>Berline</span><span>SUV</span><span>Grand SUV</span></div>
+        {polishingPrices.map((row) => (
+          <div class="price-row">
+            <span><strong>{row.service}</strong><small>{row.detail}</small></span>
+            <span><strong>{row.citadine} CHF</strong></span>
+            <span><strong>{row.berline} CHF</strong></span>
+            <span><strong>{row.suv} CHF</strong></span>
+            <span><strong>{row.grand_suv} CHF</strong></span>
+          </div>
+        ))}
       </div>
       <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite savoir si mon véhicule a besoin d'un Gloss Enhancement, One Step ou Two Step.")}>Demander conseil</a></div>
     </div>

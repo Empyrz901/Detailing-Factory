@@ -1,16 +1,28 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
-import { whatsappUrl } from "@/data/site";
+import { interiorOptions, whatsappUrl } from "@/data/site";
 ---
 <BaseLayout title="Detailing intérieur automobile - Detailing Factory">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Intérieur" title="Detailing intérieur" text="Une page dédiée aux besoins concrets : traces, poussière, tissus, plastiques, odeurs, poils d'animaux et intérieurs très sales." />
-      <div class="grid">
-        <article class="card"><h3>Formule express</h3><p>Nettoyage efficace pour un intérieur entretenu régulièrement.</p></article>
-        <article class="card"><h3>Sièges et textiles</h3><p>Traitement selon matière, taches visibles et niveau d'encrassement.</p></article>
-        <article class="card"><h3>Options</h3><p>Plafonnier, plastiques, tapis, moquettes et poils d'animaux.</p></article>
+      <SectionTitle eyebrow="Intérieur" title="Formule express" text="Rapide, efficace et soignée : aspirateur complet, habitacle et coffre, vitres intérieures et extérieures." />
+      <div class="interior-price">
+        <div>
+          <p class="eyebrow">À partir de</p>
+          <h3>60 CHF</h3>
+          <p>Le tarif varie selon la taille du véhicule : citadine, berline ou espace / 4x4.</p>
+        </div>
+        <div class="big-price"><strong>60 CHF</strong><span>à partir de</span></div>
+      </div>
+      <div class="vehicle-strip">
+        <div><span>Citadine</span><strong>60 CHF</strong></div>
+        <div><span>Berline</span><strong>80 CHF</strong></div>
+        <div><span>Espace / 4x4</span><strong>100 CHF</strong></div>
+      </div>
+      <SectionTitle eyebrow="Options" title="Ajoutez vos options à la carte" />
+      <div class="option-grid">
+        {interiorOptions.map((option) => <article><h3>{option.name}</h3><strong>{option.price} CHF</strong></article>)}
       </div>
       <div class="result-box" style="margin-top:24px">
         <span>Votre intérieur est très sale ?</span>
