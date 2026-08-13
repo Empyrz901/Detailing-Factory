@@ -29,9 +29,10 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 180px),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 82px),
+    linear-gradient(180deg, rgba(214, 181, 109, 0.06), transparent 260px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
     var(--bg);
+  background-size: auto, 88px 88px, auto;
   color: var(--text);
 }
 
@@ -74,11 +75,11 @@ textarea:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  min-height: 76px;
-  padding: 14px clamp(18px, 4vw, 46px);
+  min-height: 72px;
+  padding: 12px clamp(18px, 4vw, 46px);
   border-bottom: 1px solid var(--line);
-  background: rgba(8, 9, 9, 0.82);
-  backdrop-filter: blur(20px);
+  background: rgba(8, 9, 9, 0.72);
+  backdrop-filter: blur(22px) saturate(130%);
 }
 
 .brand {
@@ -108,7 +109,7 @@ textarea:focus-visible {
   align-items: center;
   gap: clamp(12px, 1.5vw, 20px);
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.84rem;
 }
 
 .main-nav a {
@@ -124,8 +125,8 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 20px;
+  min-height: 46px;
+  padding: 0 19px;
   border: 1px solid rgba(214, 181, 109, 0.78);
   background: linear-gradient(180deg, #e5c67f, var(--gold));
   color: #12100b;
@@ -133,7 +134,8 @@ textarea:focus-visible {
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  box-shadow: 0 14px 34px rgba(214, 181, 109, 0.18);
+  border-radius: 999px;
+  box-shadow: 0 14px 34px rgba(214, 181, 109, 0.16);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
@@ -173,12 +175,12 @@ textarea:focus-visible {
 }
 
 .hero {
-  min-height: calc(100svh - 76px);
+  min-height: calc(100svh - 72px);
   display: grid;
-  align-items: end;
+  align-items: center;
   position: relative;
   isolation: isolate;
-  padding: clamp(92px, 10vw, 150px) clamp(18px, 4vw, 46px) clamp(32px, 7vw, 74px);
+  padding: clamp(82px, 10vw, 128px) clamp(18px, 4vw, 46px) clamp(38px, 7vw, 82px);
   overflow: hidden;
 }
 
@@ -187,8 +189,8 @@ textarea:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 9, 9, 0.94), rgba(8, 9, 9, 0.58) 48%, rgba(8, 9, 9, 0.16)),
-    linear-gradient(180deg, rgba(8, 9, 9, 0.08), rgba(8, 9, 9, 0.22) 55%, var(--bg) 100%),
+    linear-gradient(90deg, rgba(8, 9, 9, 0.94), rgba(8, 9, 9, 0.6) 48%, rgba(8, 9, 9, 0.28)),
+    linear-gradient(180deg, rgba(8, 9, 9, 0.1), rgba(8, 9, 9, 0.16) 55%, var(--bg) 100%),
     url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=2400&q=82") center / cover;
   z-index: -2;
 }
@@ -204,6 +206,68 @@ textarea:focus-visible {
 
 .hero-inner {
   width: min(820px, 100%);
+}
+
+.hero-layout {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: clamp(30px, 6vw, 84px);
+  align-items: end;
+}
+
+.hero-panel {
+  border: 1px solid rgba(247, 243, 234, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(160deg, rgba(214, 181, 109, 0.14), rgba(255, 255, 255, 0.035) 38%, rgba(0, 0, 0, 0.22)),
+    rgba(11, 12, 12, 0.74);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.hero-panel span,
+.hero-panel small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-panel strong {
+  display: block;
+  margin-top: 12px;
+  color: var(--text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero-panel b {
+  display: block;
+  color: var(--gold);
+  font-size: 2.15rem;
+  line-height: 1;
+}
+
+.hero-panel div {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.hero-panel a {
+  display: inline-flex;
+  margin-top: 18px;
+  color: var(--gold);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .eyebrow {
@@ -225,7 +289,7 @@ h3 {
 
 h1 {
   max-width: 940px;
-  font-size: clamp(3.25rem, 9.5vw, 8rem);
+  font-size: clamp(3.35rem, 9.2vw, 8rem);
   font-weight: 950;
   text-transform: uppercase;
 }
@@ -273,12 +337,54 @@ p {
   background: rgba(15, 18, 17, 0.68);
   color: var(--soft);
   padding: 9px 13px;
+  border-radius: 999px;
   font-size: 0.84rem;
   backdrop-filter: blur(12px);
 }
 
+.intro-strip {
+  border-block: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.intro-strip .section-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.intro-strip div div {
+  min-height: 104px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 20px;
+  border-right: 1px solid var(--line);
+}
+
+.intro-strip div div:last-child {
+  border-right: 0;
+}
+
+.intro-strip span {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.intro-strip strong {
+  color: var(--soft);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+}
+
 .section {
   padding: clamp(64px, 8.5vw, 118px) clamp(18px, 4vw, 46px);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
 }
 
 .section.alt {
@@ -320,13 +426,40 @@ p {
   min-height: 100%;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(247, 243, 234, 0.11);
+  border-radius: 8px;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
     var(--panel);
   padding: clamp(22px, 3vw, 30px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.service-list {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.service-list a {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.52fr) 1fr;
+  gap: 22px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.service-list a:hover {
+  padding-left: 10px;
+}
+
+.service-list h3 {
+  color: var(--text);
+}
+
+.service-list p {
+  margin: 0;
 }
 
 .card::after {
@@ -369,6 +502,7 @@ a.card:hover {
   overflow: hidden;
   background: linear-gradient(180deg, transparent 24%, rgba(8, 9, 9, 0.9)), var(--image) center / cover;
   border: 1px solid var(--line);
+  border-radius: 8px;
   padding: 26px;
   box-shadow: var(--shadow);
 }
@@ -389,6 +523,8 @@ a.card:hover {
   border: 1px solid var(--line-strong);
   background: rgba(0, 0, 0, 0.16);
   box-shadow: var(--shadow);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .compare-table div {
@@ -422,6 +558,11 @@ a.card:hover {
   margin-bottom: 22px;
 }
 
+.showcase-stack {
+  display: grid;
+  gap: 18px;
+}
+
 .ba-frame {
   position: relative;
   min-height: 430px;
@@ -429,6 +570,7 @@ a.card:hover {
   border: 1px solid var(--line-strong);
   background: #060707;
   box-shadow: var(--shadow);
+  border-radius: 8px 0 0 8px;
 }
 
 .ba-frame img {
@@ -464,6 +606,7 @@ a.card:hover {
     linear-gradient(180deg, rgba(214, 181, 109, 0.08), transparent 42%),
     var(--panel);
   padding: clamp(24px, 3vw, 34px);
+  border-radius: 0 8px 8px 0;
 }
 
 .steps {
@@ -635,15 +778,16 @@ a.card:hover {
 
 .price-table {
   overflow: hidden;
-  border: 1px solid rgba(214, 181, 109, 0.42);
-  background: rgba(5, 6, 6, 0.72);
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
   box-shadow: var(--shadow);
 }
 
 .price-row {
   display: grid;
   grid-template-columns: minmax(220px, 1.35fr) repeat(4, minmax(112px, 1fr));
-  border-bottom: 1px solid rgba(214, 181, 109, 0.22);
+  border-bottom: 1px solid rgba(247, 243, 234, 0.1);
 }
 
 .price-row:last-child {
@@ -655,7 +799,7 @@ a.card:hover {
   align-content: center;
   min-height: 78px;
   padding: 16px;
-  border-right: 1px solid rgba(214, 181, 109, 0.18);
+  border-right: 1px solid rgba(247, 243, 234, 0.08);
 }
 
 .price-row span:last-child {
@@ -663,7 +807,7 @@ a.card:hover {
 }
 
 .price-row strong {
-  color: var(--gold);
+  color: var(--text);
   font-size: clamp(1.35rem, 2.4vw, 2.1rem);
   line-height: 1;
 }
@@ -674,7 +818,7 @@ a.card:hover {
 }
 
 .price-row.head {
-  background: linear-gradient(180deg, rgba(214, 181, 109, 0.16), rgba(214, 181, 109, 0.04));
+  background: rgba(214, 181, 109, 0.09);
 }
 
 .price-row.head span {
@@ -693,8 +837,10 @@ a.card:hover {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
   margin-top: 18px;
-  border: 1px solid rgba(214, 181, 109, 0.42);
-  background: rgba(8, 9, 9, 0.74);
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+  overflow: hidden;
 }
 
 .piece-strip > div,
@@ -705,7 +851,7 @@ a.card:hover {
   align-content: center;
   min-height: 88px;
   padding: 18px;
-  border-right: 1px solid rgba(214, 181, 109, 0.2);
+  border-right: 1px solid rgba(247, 243, 234, 0.09);
 }
 
 .piece-strip > div:last-child,
@@ -740,16 +886,17 @@ a.card:hover {
 }
 
 .tariff-panel {
-  border: 1px solid rgba(214, 181, 109, 0.45);
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(214, 181, 109, 0.1), transparent 24%),
-    rgba(8, 9, 9, 0.78);
+    linear-gradient(180deg, rgba(214, 181, 109, 0.08), transparent 28%),
+    rgba(255, 255, 255, 0.025);
   padding: clamp(24px, 4vw, 36px);
   box-shadow: var(--shadow);
 }
 
 .tariff-panel.silver {
-  border-color: rgba(222, 214, 199, 0.38);
+  border-color: rgba(247, 243, 234, 0.12);
   background:
     linear-gradient(180deg, rgba(222, 214, 199, 0.1), transparent 24%),
     rgba(8, 9, 9, 0.78);
@@ -800,8 +947,9 @@ a.card:hover {
   grid-template-columns: 1fr minmax(190px, 0.28fr);
   gap: 28px;
   align-items: center;
-  border: 1px solid rgba(214, 181, 109, 0.42);
-  background: rgba(8, 9, 9, 0.76);
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
   padding: clamp(24px, 4vw, 38px);
   box-shadow: var(--shadow);
 }
@@ -811,6 +959,7 @@ a.card:hover {
   place-items: center;
   min-height: 190px;
   border: 1px solid rgba(214, 181, 109, 0.6);
+  border-radius: 8px;
   background: linear-gradient(180deg, #d6b56d, #8f691d);
   color: #11100c;
   text-transform: uppercase;
@@ -846,7 +995,8 @@ a.card:hover {
   display: grid;
   align-content: end;
   gap: 18px;
-  border: 1px solid rgba(214, 181, 109, 0.36);
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
   background:
     linear-gradient(180deg, rgba(214, 181, 109, 0.07), transparent),
     var(--panel);
@@ -902,8 +1052,31 @@ a.card:hover {
   .grid,
   .grid.two,
   .before-after,
-  .form-grid {
+  .form-grid,
+  .hero-layout,
+  .split {
     grid-template-columns: 1fr;
+  }
+
+  .hero-layout {
+    align-items: start;
+  }
+
+  .hero-panel {
+    max-width: 480px;
+  }
+
+  .intro-strip .section-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .intro-strip div div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .service-list a {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .selector {
@@ -930,6 +1103,11 @@ a.card:hover {
 
   .ba-frame {
     min-height: 360px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .ba-copy {
+    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -976,6 +1154,36 @@ a.card:hover {
   .hero {
     min-height: auto;
     padding: 76px 16px 42px;
+  }
+
+  .hero-panel {
+    padding: 20px;
+  }
+
+  .hero-panel strong {
+    font-size: 2rem;
+  }
+
+  .hero-panel b {
+    font-size: 1.7rem;
+  }
+
+  .intro-strip .section-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-strip div div {
+    min-height: 82px;
+    padding: 16px 0;
+    border-right: 0;
+  }
+
+  .intro-strip .section-inner {
+    padding-inline: 16px;
+  }
+
+  .service-list a {
+    padding: 18px 0;
   }
 
   .hero::before {
@@ -1074,8 +1282,10 @@ a.card:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
     margin-bottom: 14px;
-    border: 1px solid rgba(214, 181, 109, 0.32);
-    background: rgba(5, 6, 6, 0.72);
+    border: 1px solid rgba(247, 243, 234, 0.12);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.025);
+    overflow: hidden;
     box-shadow: 0 18px 46px rgba(0, 0, 0, 0.26);
   }
 
@@ -1093,7 +1303,7 @@ a.card:hover {
   .price-row span:first-child {
     grid-column: 1 / -1;
     min-height: auto;
-    background: rgba(214, 181, 109, 0.1);
+    background: rgba(214, 181, 109, 0.08);
   }
 
   .price-row span:nth-child(3),

@@ -6,30 +6,55 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
 ---
 <BaseLayout>
   <section class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Brillance • Protection • Remise à neuf</p>
-      <h1>Detailing Factory</h1>
-      <p class="lead">Le detailing automobile pensé pour révéler, protéger et préserver votre véhicule.</p>
-      <div class="hero-actions">
-        <a class="button" href="/reservation/">Prendre rendez-vous</a>
-        <a class="button secondary" href="/tarifs/">Obtenir mon devis</a>
+    <div class="hero-layout">
+      <div class="hero-inner">
+        <p class="eyebrow">Detailing automobile premium</p>
+        <h1>Detailing Factory</h1>
+        <p class="lead">Brillance, protection et remise à neuf dans le canton de Vaud. Une approche précise pour révéler le véhicule sans le transformer en simple lavage.</p>
+        <div class="hero-actions">
+          <a class="button" href="/reservation/">Prendre rendez-vous</a>
+          <a class="button secondary" href="/tarifs/">Obtenir mon devis</a>
+        </div>
+        <div class="trust-row">
+          <span class="pill">{business.googleRating} Google</span>
+          <span class="pill">Produits professionnels</span>
+          <span class="pill">Sur rendez-vous</span>
+          <span class="pill">Devis sur photos</span>
+        </div>
       </div>
-      <div class="trust-row">
-        <span class="pill">{business.googleRating} Google</span>
-        <span class="pill">Produits professionnels</span>
-        <span class="pill">Sur rendez-vous</span>
-        <span class="pill">Devis sur photos</span>
-      </div>
+      <aside class="hero-panel" aria-label="Prestations principales">
+        <span>Signature</span>
+        <strong>One Step</strong>
+        <p>Correction légère, brillance intense et finition soignée.</p>
+        <div>
+          <small>À partir de</small>
+          <b>450 CHF</b>
+        </div>
+        <a href="/polissage/">Voir le polissage</a>
+      </aside>
     </div>
   </section>
 
-  <section class="section">
+  <section class="intro-strip" aria-label="Points forts">
     <div class="section-inner">
-      <SectionTitle eyebrow="Parcours guidé" title="Que souhaitez-vous faire sur votre véhicule ?" text="Le client choisit son besoin, pas un jargon technique. Le site l'oriente vers la prestation adaptée." />
-      <div class="grid">
+      <div><span>01</span><strong>Diagnostic par photos</strong></div>
+      <div><span>02</span><strong>Tarifs indicatifs clairs</strong></div>
+      <div><span>03</span><strong>Travail sur rendez-vous</strong></div>
+      <div><span>04</span><strong>Finition contrôlée</strong></div>
+    </div>
+  </section>
+
+  <section class="section service-section">
+    <div class="section-inner split">
+      <div>
+        <SectionTitle eyebrow="Parcours guidé" title="Que souhaitez-vous faire sur votre véhicule ?" text="Le site guide le visiteur selon son besoin réel : nettoyer, corriger, protéger, ou simplement demander conseil." />
+        <div class="actions">
+          <a class="button secondary" href="/tarifs/">Explorer les tarifs</a>
+        </div>
+      </div>
+      <div class="service-list">
         {services.map((service) => (
-          <a class="card" href={service.href}>
-            <p class="eyebrow">Detailing Factory</p>
+          <a href={service.href}>
             <h3>{service.title}</h3>
             <p>{service.text}</p>
           </a>
@@ -39,7 +64,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
   </section>
 
   <section class="section alt">
-    <div class="section-inner">
+    <div class="section-inner split">
       <SectionTitle eyebrow="Positionnement" title="Plus qu'un simple lavage" text="Un lavage nettoie. Le detailing va plus loin : il améliore la finition, protège les surfaces et s'adapte à l'état réel du véhicule." />
       <div class="compare-table">
         <div>Lavage classique</div><div>Detailing Factory</div>
@@ -54,7 +79,9 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
   <section class="section">
     <div class="section-inner">
       <SectionTitle eyebrow="Avant / Après" title="Le résultat parle de lui-même" text="Les réalisations doivent devenir la preuve principale du savoir-faire." />
-      {cases.map((item) => <BeforeAfter item={item} />)}
+      <div class="showcase-stack">
+        {cases.map((item) => <BeforeAfter item={item} />)}
+      </div>
     </div>
   </section>
 
