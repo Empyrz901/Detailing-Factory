@@ -363,7 +363,7 @@ p {
 
 .intro-strip .section-inner {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
 }
 
 .intro-strip div div {
@@ -594,14 +594,24 @@ a.card:hover {
 
 .ba-before {
   position: absolute;
-  inset: 0 auto 0 0;
-  width: 50%;
+  inset: 0;
+  width: 100%;
   overflow: hidden;
-  border-right: 2px solid var(--gold);
+  clip-path: inset(0 calc(100% - var(--split, 50%)) 0 0);
 }
 
 .ba-before img {
-  width: max(100%, 1180px);
+  width: 100%;
+}
+
+.ba-before::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--split, 50%);
+  width: 2px;
+  background: var(--gold);
 }
 
 .ba-frame input {
@@ -686,6 +696,83 @@ a.card:hover {
     var(--panel);
   padding: clamp(24px, 3vw, 34px);
   border-radius: 0 8px 8px 0;
+}
+
+.gallery-heading {
+  margin: clamp(54px, 8vw, 88px) 0 24px;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 430px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.photo-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.025);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 38% 0 0;
+  background: linear-gradient(transparent, rgba(5, 6, 6, 0.94));
+}
+
+.photo-card figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+}
+
+.photo-card figcaption span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.photo-card figcaption strong {
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .steps {
@@ -814,22 +901,35 @@ a.card:hover {
 
 .floating-whatsapp {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 20px;
+  bottom: 20px;
   z-index: 30;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
+  gap: 8px;
+  min-height: 48px;
   padding: 0 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(180deg, #7ac98b, var(--green));
-  color: #061008;
-  font-size: 0.84rem;
-  font-weight: 950;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.38);
+  border: 0;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.floating-whatsapp svg {
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: #20bd5a;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.48);
 }
 
 .tariff-hero {
@@ -1131,6 +1231,7 @@ a.card:hover {
   .grid,
   .grid.two,
   .before-after,
+  .photo-gallery,
   .form-grid,
   .hero-layout,
   .split {
@@ -1391,6 +1492,10 @@ a.card:hover {
     padding: 20px;
   }
 
+  .photo-card {
+    min-height: 360px;
+  }
+
   .price-table {
     overflow: visible;
     border-color: rgba(214, 181, 109, 0.32);
@@ -1487,9 +1592,27 @@ a.card:hover {
   }
 
   .floating-whatsapp {
-    left: 18px;
     right: 18px;
-    bottom: max(14px, env(safe-area-inset-bottom));
-    min-height: 52px;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    left: auto;
+    width: 56px;
+    height: 56px;
+    min-height: 56px;
+    padding: 0;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp:hover {
+    transform: none;
   }
 }

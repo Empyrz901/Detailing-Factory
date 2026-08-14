@@ -13,10 +13,9 @@ const vehicles = [
 <BaseLayout title="Tarifs detailing automobile - Detailing Factory">
   <section class="section tariff-hero">
     <div class="section-inner">
-      <SectionTitle eyebrow="Tarifs" title="Des prix clairs, une finition premium" text="Les tarifs restent indicatifs : l'état réel du véhicule, la contamination et le niveau de correction peuvent modifier l'estimation finale." />
+      <SectionTitle eyebrow="Tarifs" title="Choisissez votre prestation" text="Prix indicatifs, confirmés après quelques photos du véhicule." />
       <div class="tariff-actions">
-        <a class="button" href="#configurateur">Estimer ma prestation</a>
-        <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis. Je peux envoyer des photos de mon véhicule.")}>Envoyer des photos</a>
+        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis. Je peux envoyer des photos de mon véhicule.")}>Obtenir un devis précis</a>
       </div>
     </div>
   </section>
@@ -131,24 +130,4 @@ const vehicles = [
     </div>
   </section>
 
-  <section class="section alt" id="configurateur">
-    <div class="section-inner" data-pricing>
-      <SectionTitle eyebrow="Configurateur rapide" title="Obtenir un tarif indicatif" text="Choisissez votre véhicule et votre besoin principal. Le message WhatsApp final peut ensuite être complété avec vos photos." />
-      <h3>1. Choisir le véhicule</h3>
-      <div class="selector">
-        <label><input type="radio" name="price-vehicle" value="citadine" checked />Citadine</label>
-        <label><input type="radio" name="price-vehicle" value="berline" />Berline</label>
-        <label><input type="radio" name="price-vehicle" value="suv" />SUV</label>
-        <label><input type="radio" name="price-vehicle" value="grand_suv" />Grand SUV</label>
-      </div>
-      <h3>2. Choisir la prestation</h3>
-      <div class="selector">
-        <label><input type="radio" name="price-service" value="lavage" checked />Lavage complet</label>
-        <label><input type="radio" name="price-service" value="interieur" />Intérieur express</label>
-        <label><input type="radio" name="price-service" value="polissage" />Gloss Enhancement</label>
-        <label><input type="radio" name="price-service" value="protection" />Protection 1 an</label>
-      </div>
-      <div class="result-box" data-price-output></div>
-    </div>
-  </section>
 </BaseLayout>

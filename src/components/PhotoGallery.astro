@@ -1,0 +1,15 @@
+---
+const { items, labelledBy } = Astro.props;
+---
+
+<div class="photo-gallery" aria-labelledby={labelledBy}>
+  {items.map((item) => (
+    <figure class="photo-card">
+      <img src={item.src} alt={item.alt} loading="lazy" width="1179" height="1558" />
+      <figcaption>
+        <span>{item.category}</span>
+        <strong>{item.title}</strong>
+      </figcaption>
+    </figure>
+  ))}
+</div>

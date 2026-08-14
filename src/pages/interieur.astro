@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
-import { interiorOptions, whatsappUrl } from "@/data/site";
+import BeforeAfter from "@/components/BeforeAfter.astro";
+import PhotoGallery from "@/components/PhotoGallery.astro";
+import { interiorCases, interiorGallery, interiorOptions, whatsappUrl } from "@/data/site";
 ---
 <BaseLayout title="Detailing intérieur automobile - Detailing Factory">
   <section class="section">
@@ -30,6 +32,24 @@ import { interiorOptions, whatsappUrl } from "@/data/site";
         <small>Une estimation personnalisée évite les incompréhensions avant rendez-vous.</small>
       </div>
       <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite une estimation pour un detailing intérieur. Je vais envoyer des photos.")}>Envoyer mes photos</a></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Avant / Après" title="Le nettoyage en détail" text="Sièges, tapis et contre-portes : comparez la même zone avant et après intervention." />
+      <div class="showcase-stack">
+        {interiorCases.slice(0, 2).map((item) => <BeforeAfter item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Réalisations" title="Habitacles nettoyés" text="Quelques vues d'ensemble et détails de véhicules traités par Detailing Factory." />
+      <PhotoGallery items={interiorGallery.slice(0, 6)} labelledBy="galerie-habitacles" />
+      <span id="galerie-habitacles" class="sr-only">Galerie des habitacles nettoyés</span>
+      <div class="actions"><a class="button secondary" href="/realisations/">Voir toutes les réalisations</a></div>
     </div>
   </section>
 </BaseLayout>
