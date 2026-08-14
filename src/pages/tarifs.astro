@@ -68,7 +68,7 @@ const vehicles = [
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="section alt" id="lavage-exterieur">
     <div class="section-inner">
       <SectionTitle eyebrow="Lavage" title="Lavage complet ou nettoyage extérieur express" />
       <div class="grid two">
@@ -102,6 +102,9 @@ const vehicles = [
             {exteriorPrices.filter((row) => row.express).map((row) => <div><span>{row.vehicle}</span><strong>{row.express} CHF</strong></div>)}
           </div>
         </article>
+      </div>
+      <div class="actions">
+        <a class="button secondary" href="/lavage-exterieur/">Découvrir le lavage extérieur</a>
       </div>
     </div>
   </section>
