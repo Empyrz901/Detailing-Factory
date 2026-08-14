@@ -1,23 +1,20 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
-import { whatsappUrl } from "@/data/site";
+import { services, whatsappUrl } from "@/data/site";
 ---
 <BaseLayout title="Prestations detailing automobile - Detailing Factory">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Prestations" title="Un parcours par besoin, pas un catalogue" text="Chaque prestation est présentée pour aider le client à comprendre le résultat attendu et passer naturellement au devis." />
-      <div class="grid">
-        <a class="card" id="lavage" href="/lavage-exterieur/"><h3>Lavage extérieur</h3><p>Formule Express ou lavage complet, méthode douce, finitions soignées et déplacement à domicile.</p></a>
-        <article class="card"><h3>Gloss Enhancement</h3><p>Idéal pour retrouver de la profondeur et de l'éclat sans viser une correction lourde.</p></article>
-        <article class="card"><h3>One Step</h3><p>Correction légère et forte amélioration visuelle pour micro-rayures et peinture fatiguée.</p></article>
-        <article class="card"><h3>Two Step</h3><p>Correction avancée et finition poussée pour un niveau de détail supérieur.</p></article>
-        <article class="card"><h3>Protection</h3><p>Protection 1, 2 ou 3 ans selon l'usage, l'exposition et le niveau de durabilité recherché.</p></article>
-        <article class="card"><h3>Intérieur</h3><p>Plastiques, textiles, tapis, sièges, poils d'animaux et options selon l'état réel du véhicule.</p></article>
+      <SectionTitle eyebrow="Prestations" title="Quatre services, simplement" text="Choisissez votre besoin principal. Nous adaptons ensuite la formule à votre véhicule." />
+      <div class="grid two">
+        {services.map((service) => (
+          <a class="card" href={service.href}><h3>{service.title}</h3><p>{service.text}</p></a>
+        ))}
       </div>
       <div class="actions">
-        <a class="button" href="/tarifs/">Voir les tarifs indicatifs</a>
-        <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite être conseillé sur une prestation.")}>Être conseillé sur WhatsApp</a>
+        <a class="button" href="/tarifs/">Voir les tarifs</a>
+        <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite être conseillé sur une prestation.")}>Demander conseil</a>
       </div>
     </div>
   </section>

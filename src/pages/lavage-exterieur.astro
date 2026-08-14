@@ -13,7 +13,7 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
       <div class="hero-inner">
         <p class="eyebrow">Lavage extérieur à domicile dans le {business.city}</p>
         <h1>Une voiture propre jusque dans les détails</h1>
-        <p class="lead">Deux formules adaptées à votre besoin : un nettoyage extérieur Express ou un lavage complet avec décontamination et finitions approfondies.</p>
+        <p class="lead">Un entretien express ou un nettoyage complet, directement à domicile.</p>
         <div class="hero-actions">
           <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un devis pour un lavage extérieur.")}>Réserver un lavage</a>
           <a class="button secondary" href="#formules">Voir les formules</a>
@@ -43,18 +43,16 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
 
   <section class="section" id="formules">
     <div class="section-inner">
-      <SectionTitle eyebrow="Lavage extérieur" title="Express ou complet" text="Choisissez l'essentiel pour un entretien rapide, ou un nettoyage approfondi avec décontamination de la carrosserie et soin des détails." />
+      <SectionTitle eyebrow="Deux formules" title="Express ou complet" />
       <div class="grid two">
         <article class="tariff-panel silver">
           <p class="eyebrow">Nettoyage extérieur Express</p>
           <h3>L'essentiel, propre et éclatant</h3>
           <ul>
-            <li>Prélavage</li>
-            <li>Mousse active</li>
-            <li>Rinçage</li>
+            <li>Prélavage et mousse active</li>
             <li>Lavage manuel</li>
-            <li>Séchage complet</li>
-            <li>Finition rapide</li>
+            <li>Rinçage et séchage</li>
+            <li>Finition extérieure</li>
           </ul>
           <div class="mini-table">
             {exteriorPrices.filter((row) => row.express !== null).map((row) => (
@@ -67,15 +65,11 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
           <p class="eyebrow">Lavage complet</p>
           <h3>Un nettoyage en profondeur</h3>
           <ul>
-            <li>Nettoyage approfondi des jantes</li>
-            <li>Nettoyage des pneus et passages de roues</li>
-            <li>Prélavage haute pression et mousse active</li>
+            <li>Jantes, pneus et passages de roues</li>
+            <li>Prélavage et mousse active</li>
             <li>Décontamination de la carrosserie</li>
-            <li>Lavage manuel avec méthode des deux seaux</li>
-            <li>Rinçage complet et séchage microfibre / souffleur</li>
-            <li>Détails extérieurs, recoins et contours de portes</li>
-            <li>Vitres extérieures et dressing pneus</li>
-            <li>Finition et contrôle final</li>
+            <li>Lavage manuel et séchage</li>
+            <li>Recoins, vitres et finitions</li>
           </ul>
           <div class="mini-table">
             {exteriorPrices.map((row) => (
@@ -86,18 +80,7 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
       </div>
       <div class="actions">
         <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite réserver un lavage extérieur. Voici mon véhicule et la formule qui m'intéresse : ")}>Demander un rendez-vous</a>
-        <a class="button secondary" href="/tarifs/#configurateur">Estimer une autre prestation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section alt">
-    <div class="section-inner split">
-      <SectionTitle eyebrow="À domicile" title="Nous venons jusqu'à votre véhicule" text={`Service disponible dans le ${business.area}, uniquement sur rendez-vous. Le tarif final est confirmé selon la taille et l'état réel du véhicule.`} />
-      <div class="card">
-        <h3>Avant votre rendez-vous</h3>
-        <p>Envoyez quelques photos du véhicule et indiquez son modèle, votre commune ainsi que la formule souhaitée. Nous vous confirmerons la disponibilité et le prix.</p>
-        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un lavage extérieur à domicile. Je vais envoyer des photos de mon véhicule et indiquer ma commune.")}>Envoyer les informations</a>
+        <a class="button secondary" href="/tarifs/">Voir tous les tarifs</a>
       </div>
     </div>
   </section>

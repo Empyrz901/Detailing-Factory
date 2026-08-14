@@ -13,7 +13,7 @@ document.querySelectorAll("[data-before-after]").forEach((frame) => {
   const before = frame.querySelector(".ba-before");
   if (!input || !before) return;
   const update = () => {
-    before.style.width = `${input.value}%`;
+    before.style.setProperty("--split", `${input.value}%`);
   };
   input.addEventListener("input", update);
   update();

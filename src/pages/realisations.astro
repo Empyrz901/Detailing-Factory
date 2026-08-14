@@ -2,13 +2,35 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import BeforeAfter from "@/components/BeforeAfter.astro";
-import { cases } from "@/data/site";
+import PhotoGallery from "@/components/PhotoGallery.astro";
+import { interiorCases, interiorGallery, polishingCases, polishingGallery } from "@/data/site";
 ---
-<BaseLayout title="Réalisations avant après - Detailing Factory">
+<BaseLayout title="Réalisations avant après - Detailing Factory" description="Découvrez nos réalisations de polissage et de detailing intérieur : corrections de carrosserie, nettoyage textile et résultats avant/après.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Réalisations" title="Avant / Après" text="À compléter avec les vraies photos client : même véhicule, même angle, avant intervention puis après restitution." />
-      {cases.map((item) => <BeforeAfter item={item} />)}
+      <SectionTitle eyebrow="Réalisations" title="Des résultats réels" text="Chaque comparaison présente la même zone avant et après intervention. Utilisez le curseur pour observer le travail réalisé." />
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Polissage" title="Correction de la carrosserie" text="Micro-rayures, traces localisées et manque de profondeur : voici plusieurs corrections réalisées sous éclairage de contrôle." />
+      <div class="showcase-stack">
+        {polishingCases.map((item) => <BeforeAfter item={item} />)}
+      </div>
+      <h2 class="gallery-heading" id="galerie-polissage">Le polissage en images</h2>
+      <PhotoGallery items={polishingGallery} labelledBy="galerie-polissage" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Detailing intérieur" title="Textiles et surfaces remis au propre" text="Nettoyage des sièges, tapis et zones de contact avec des comparaisons prises sur les mêmes éléments." />
+      <div class="showcase-stack">
+        {interiorCases.map((item) => <BeforeAfter item={item} />)}
+      </div>
+      <h2 class="gallery-heading" id="galerie-interieur">Habitacles réalisés</h2>
+      <PhotoGallery items={interiorGallery} labelledBy="galerie-interieur" />
     </div>
   </section>
 </BaseLayout>

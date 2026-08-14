@@ -13,34 +13,24 @@ export const business = {
 
 export const services = [
   {
-    title: "Le nettoyer",
-    text: "Lavage extérieur, lavage complet et entretien régulier.",
+    title: "Lavage extérieur",
+    text: "Entretien express ou nettoyage complet.",
     href: "/lavage-exterieur/"
   },
   {
-    title: "Lui redonner de la brillance",
-    text: "Gloss Enhancement et One Step pour retrouver de la profondeur.",
-    href: "/polissage/"
-  },
-  {
-    title: "Corriger les défauts",
-    text: "Polissage One Step ou Two Step selon l'état de la peinture.",
-    href: "/polissage/"
-  },
-  {
-    title: "Le protéger",
-    text: "Protections longue durée 1, 2 ou 3 ans.",
-    href: "/protection/"
-  },
-  {
-    title: "Nettoyer l'intérieur",
-    text: "Detailing intérieur, sièges, moquettes, plastiques et options.",
+    title: "Detailing intérieur",
+    text: "Habitacle, sièges, tapis et surfaces.",
     href: "/interieur/"
   },
   {
-    title: "Je ne sais pas",
-    text: "Envoyez 3 à 5 photos sur WhatsApp, on vous guide.",
-    href: "/contact/"
+    title: "Polissage",
+    text: "Brillance et correction des micro-rayures.",
+    href: "/polissage/"
+  },
+  {
+    title: "Protection",
+    text: "Protection durable de la carrosserie.",
+    href: "/protection/"
   }
 ];
 
@@ -93,28 +83,105 @@ export const interiorOptions = [
   { name: "Dressing tapis", price: 10 }
 ];
 
-export const cases = [
+export const polishingCases = [
   {
-    title: "One Step",
-    car: "Véhicule client",
-    goal: "Correction des micro-rayures et amélioration de la brillance. Ajouter deux photos réelles du même véhicule, prises sous le même angle.",
-    before: "",
-    after: ""
+    title: "Correction localisée",
+    car: "Carrosserie Jeep",
+    goal: "Atténuation des rayures et restauration d'une finition plus homogène sur la carrosserie noire.",
+    before: "/images/realisations/polissage/jeep-carrosserie-rayures-avant.jpeg",
+    after: "/images/realisations/polissage/jeep-carrosserie-rayures-apres.jpeg"
   },
   {
-    title: "Protection longue durée",
-    car: "Véhicule client",
-    goal: "Préparation de la carrosserie et protection hydrophobe. Ajouter deux photos réelles du même véhicule, prises sous le même angle.",
-    before: "",
-    after: ""
+    title: "Correction des micro-rayures",
+    car: "Aile arrière",
+    goal: "Réduction des défauts visibles sous l'éclairage et restitution de la profondeur de la peinture.",
+    before: "/images/realisations/polissage/aile-arriere-micro-rayures-avant.jpeg",
+    after: "/images/realisations/polissage/aile-arriere-micro-rayures-apres.jpeg"
   },
   {
-    title: "Detailing intérieur",
-    car: "Intérieur client",
-    goal: "Nettoyage précis des textiles, plastiques et zones de contact. Ajouter deux photos réelles de la même zone intérieure.",
-    before: "",
-    after: ""
+    title: "Polissage de finition",
+    car: "Pavillon noir métallisé",
+    goal: "Correction du voile et des micro-rayures révélés par l'éclairage de contrôle.",
+    before: "/images/realisations/polissage/pavillon-micro-rayures-avant.jpeg",
+    after: "/images/realisations/polissage/pavillon-micro-rayures-apres.jpeg"
+  },
+  {
+    title: "Correction localisée",
+    car: "Coque de rétroviseur",
+    goal: "Correction de la trace colorée et amélioration de la finition de la coque.",
+    before: "/images/realisations/polissage/retroviseur-rayure-avant.jpeg",
+    after: "/images/realisations/polissage/retroviseur-rayure-apres.jpeg"
   }
+];
+
+export const interiorCases = [
+  {
+    title: "Shampoing textile",
+    car: "Siège en tissu",
+    goal: "Nettoyage en profondeur de l'assise et élimination des taches visibles.",
+    before: "/images/realisations/interieur/siege-tissu-taches-avant.jpeg",
+    after: "/images/realisations/interieur/siege-tissu-taches-apres.jpeg"
+  },
+  {
+    title: "Nettoyage textile",
+    car: "Assise avant",
+    goal: "Extraction des salissures incrustées et uniformisation du tissu.",
+    before: "/images/realisations/interieur/siege-tissu-assise-avant.jpeg",
+    after: "/images/realisations/interieur/siege-tissu-assise-apres.jpeg"
+  },
+  {
+    title: "Détachage textile",
+    car: "Siège avant",
+    goal: "Traitement des auréoles et remise au propre de l'assise.",
+    before: "/images/realisations/interieur/siege-tissu-salissures-avant.jpeg",
+    after: "/images/realisations/interieur/siege-tissu-salissures-apres.jpeg"
+  },
+  {
+    title: "Nettoyage textile",
+    car: "Banquette claire",
+    goal: "Nettoyage des traces sombres et restauration de l'aspect uniforme du tissu.",
+    before: "/images/realisations/interieur/banquette-tissu-taches-avant.jpeg",
+    after: "/images/realisations/interieur/banquette-tissu-taches-apres.jpeg"
+  },
+  {
+    title: "Nettoyage des accessoires",
+    car: "Tapis automobile",
+    goal: "Brossage et nettoyage approfondi pour retirer les marques et raviver les fibres.",
+    before: "/images/realisations/interieur/tapis-voiture-avant.jpeg",
+    after: "/images/realisations/interieur/tapis-voiture-apres.jpeg"
+  },
+  {
+    title: "Nettoyage des surfaces",
+    car: "Contre-porte en cuir",
+    goal: "Nettoyage des traces sur le cuir, les plastiques et les zones de contact.",
+    before: "/images/realisations/interieur/contre-porte-cuir-avant.jpeg",
+    after: "/images/realisations/interieur/contre-porte-cuir-apres.jpeg"
+  }
+];
+
+export const cases = [polishingCases[0], interiorCases[0], interiorCases[5]];
+
+export const polishingGallery = [
+  { src: "/images/realisations/polissage/comparatif-capot-noir-avant-apres.jpeg", alt: "Comparatif avant après sur un capot noir poli", category: "Comparatif", title: "Brillance retrouvée" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-masquage-preparation.jpeg", alt: "Carrosserie bleue protégée par un masquage avant polissage", category: "Préparation", title: "Masquage des zones sensibles" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-polissage-capot.jpeg", alt: "Polissage mécanique d'un capot bleu", category: "Correction", title: "Travail du capot" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-polissage-aile.jpeg", alt: "Polissage mécanique d'une aile bleue", category: "Correction", title: "Travail des courbes" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-defauts-avant.jpeg", alt: "Micro-rayures visibles sous une lumière de contrôle", category: "Diagnostic", title: "Défauts sous éclairage" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-finition-apres.jpeg", alt: "Finition brillante d'une carrosserie bleue après polissage", category: "Résultat", title: "Reflets et profondeur" },
+  { src: "/images/realisations/polissage/carrosserie-noire-brillance-finale.jpeg", alt: "Reflet brillant sur une carrosserie noire après polissage", category: "Résultat", title: "Finition miroir" }
+];
+
+export const interiorGallery = [
+  { src: "/images/realisations/interieur/habitacle-cuir-marron-arriere.jpeg", alt: "Habitacle en cuir marron nettoyé vu depuis l'arrière", category: "Habitacle", title: "Places arrière" },
+  { src: "/images/realisations/interieur/habitacle-cuir-marron-avant.jpeg", alt: "Habitacle avant en cuir marron nettoyé", category: "Habitacle", title: "Poste de conduite" },
+  { src: "/images/realisations/interieur/habitacle-cuir-marron-vue-ensemble.jpeg", alt: "Vue d'ensemble d'un habitacle en cuir marron après detailing", category: "Résultat", title: "Intérieur complet" },
+  { src: "/images/realisations/interieur/nettoyage-interieur-et-coffre.jpeg", alt: "Résultats de nettoyage d'un habitacle et d'un coffre", category: "Detailing intérieur", title: "Habitacle et coffre" },
+  { src: "/images/realisations/interieur/siege-mixte-nettoye-vue-large.jpeg", alt: "Siège mixte tissu et cuir nettoyé", category: "Sièges", title: "Assise nettoyée" },
+  { src: "/images/realisations/interieur/siege-mixte-nettoye-detail.jpeg", alt: "Détail d'un siège mixte nettoyé", category: "Sièges", title: "Finition du textile" },
+  { src: "/images/realisations/interieur/habitacle-noir-nettoye.jpeg", alt: "Habitacle automobile noir après nettoyage", category: "Habitacle", title: "Finition intérieure" },
+  { src: "/images/realisations/interieur/habitacle-cuir-rouge-avant.jpeg", alt: "Habitacle avant en cuir rouge après detailing", category: "Cuir", title: "Places avant" },
+  { src: "/images/realisations/interieur/habitacle-cuir-rouge-arriere.jpeg", alt: "Places arrière en cuir rouge après detailing", category: "Cuir", title: "Places arrière" },
+  { src: "/images/realisations/interieur/habitacle-cuir-noir-nettoye.jpeg", alt: "Habitacle en cuir noir propre après detailing", category: "Cuir", title: "Habitacle nettoyé" }
 ];
 
 export const faqs = [
