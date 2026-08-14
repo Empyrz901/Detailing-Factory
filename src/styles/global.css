@@ -210,6 +210,13 @@ textarea:focus-visible {
   opacity: 0.7;
 }
 
+.wash-hero::before {
+  background:
+    linear-gradient(90deg, rgba(8, 9, 9, 0.94), rgba(8, 9, 9, 0.58) 48%, rgba(8, 9, 9, 0.3)),
+    linear-gradient(180deg, rgba(8, 9, 9, 0.08), rgba(8, 9, 9, 0.18) 55%, var(--bg) 100%),
+    url("https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=2400&q=82") center / cover;
+}
+
 .hero-inner {
   width: min(820px, 100%);
 }
@@ -1271,6 +1278,12 @@ a.card:hover {
     background:
       linear-gradient(180deg, rgba(8, 9, 9, 0.74), rgba(8, 9, 9, 0.5) 36%, var(--bg) 100%),
       url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1200&q=80") center / cover;
+  }
+
+  .wash-hero::before {
+    background:
+      linear-gradient(180deg, rgba(8, 9, 9, 0.72), rgba(8, 9, 9, 0.52) 36%, var(--bg) 100%),
+      url("https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=1200&q=80") center / cover;
   }
 
   h1 {

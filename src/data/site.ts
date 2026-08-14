@@ -15,7 +15,7 @@ export const services = [
   {
     title: "Le nettoyer",
     text: "Lavage extérieur, lavage complet et entretien régulier.",
-    href: "/prestations/#lavage"
+    href: "/lavage-exterieur/"
   },
   {
     title: "Lui redonner de la brillance",
@@ -78,9 +78,9 @@ export const ceramicPrices = [
 ];
 
 export const exteriorPrices = [
-  { vehicle: "Petite voiture", express: 59, complet: 119 },
+  { vehicle: "Petite citadine", express: 59, complet: 119 },
   { vehicle: "Berline / compacte", express: 69, complet: 129 },
-  { vehicle: "Grande voiture", express: 79, complet: 139 },
+  { vehicle: "Grande berline / break", express: 79, complet: 139 },
   { vehicle: "SUV / 4x4", express: 89, complet: 149 },
   { vehicle: "Gros SUV / véhicule très sale", express: null, complet: 160 }
 ];
