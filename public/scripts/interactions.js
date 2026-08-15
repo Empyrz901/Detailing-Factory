@@ -1,10 +1,27 @@
 const menuButton = document.querySelector("[data-menu-toggle]");
 const menu = document.querySelector("[data-menu]");
+const menuBackdrop = document.querySelector("[data-menu-backdrop]");
 
 if (menuButton && menu) {
-  menuButton.addEventListener("click", () => {
-    menu.classList.toggle("is-open");
-    menuButton.classList.toggle("is-open");
+  const setMenuOpen = (open) => {
+    menu.classList.toggle("is-open", open);
+    menuButton.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+  };
+
+  menuButton.addEventListener("click", () => setMenuOpen(!menu.classList.contains("is-open")));
+  menuBackdrop?.addEventListener("click", () => setMenuOpen(false));
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenuOpen(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("is-open")) {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+  window.matchMedia("(min-width: 981px)").addEventListener("change", (event) => {
+    if (event.matches) setMenuOpen(false);
   });
 }
 
@@ -78,7 +95,7 @@ if (configurator) {
     const price = prices[vehicle]?.[family] || prices.citadine.polissage;
     result.innerHTML = `<span>Votre prestation semble correspondre à</span><strong>${recommendation}</strong><small>À partir de ${price} CHF, à confirmer après analyse des photos.</small>`;
     const message = `Bonjour Detailing Factory,\n\nJe souhaite recevoir une estimation.\n\nVéhicule : ${vehicleLabels[vehicle] || "Non précisé"}\nBesoin : ${recommendation}\nRésultat recherché : ${finish || "Non précisé"}\nÉtat : ${condition || "Non précisé"}\n\nJe peux envoyer des photos du véhicule.`;
-    cta.href = `https://wa.me/41761234567?text=${encodeURIComponent(message)}`;
+    cta.href = `https://wa.me/41765362109?text=${encodeURIComponent(message)}`;
   };
   configurator.querySelectorAll("input").forEach((input) => input.addEventListener("change", updateConfig));
   updateConfig();
