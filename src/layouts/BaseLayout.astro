@@ -4,7 +4,7 @@ import { business, whatsappUrl } from "@/data/site";
 
 const {
   title = "Detailing automobile à Yverdon-les-Bains | Detailing Factory",
-  description = "Detailing automobile à Yverdon-les-Bains : nettoyage intérieur, polissage et protection céramique. Demandez votre devis par WhatsApp.",
+  description = "Detailing automobile à Yverdon-les-Bains : lavage, intérieur, polissage et protection céramique. Devis personnalisé sur WhatsApp.",
   canonical = Astro.url.pathname,
   robots = "index, follow"
 } = Astro.props;
@@ -42,7 +42,7 @@ const isCurrent = (href: string) => {
 };
 ---
 <!doctype html>
-<html lang="fr">
+<html lang="fr-CH">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -50,6 +50,8 @@ const isCurrent = (href: string) => {
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="fr-CH" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/images/partage-detailing-factory.webp" />
     {preloadHero && <link rel="preload" as="image" href={preloadHero} type="image/webp" fetchpriority="high" />}

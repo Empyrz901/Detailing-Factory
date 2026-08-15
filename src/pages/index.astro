@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import BeforeAfter from "@/components/BeforeAfter.astro";
-import { business, services, cases, whatsappUrl } from "@/data/site";
+import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
 ---
 
 <BaseLayout>
@@ -51,11 +51,53 @@ import { business, services, cases, whatsappUrl } from "@/data/site";
 
   <section class="section alt">
     <div class="section-inner">
+      <SectionTitle
+        eyebrow="Detailing automobile"
+        title="Une préparation adaptée à chaque véhicule"
+        text="À Yverdon-les-Bains, nous intervenons sur rendez-vous après avoir identifié l’état du véhicule, vos priorités et le niveau de finition recherché."
+      />
+      <div class="grid three editorial-grid">
+        <article class="card">
+          <h3>Nettoyer sans négliger les détails</h3>
+          <p>Un entretien extérieur commence par un lavage méthodique de la carrosserie, des jantes et des zones exposées aux salissures. Pour l’habitacle, le travail peut comprendre l’aspiration, le nettoyage des surfaces, des vitres, des tapis et des textiles. La formule est choisie selon l’usage du véhicule et son état réel.</p>
+        </article>
+        <article class="card">
+          <h3>Corriger la finition</h3>
+          <p>Le polissage sert à atténuer le voile terne, les tourbillons et une partie des micro-rayures. Une inspection permet de choisir entre une remise en brillance, un polissage en une étape ou une correction en deux étapes. Les défauts profonds sont signalés avant l’intervention afin de fixer un objectif réaliste.</p>
+        </article>
+        <article class="card">
+          <h3>Protéger le résultat</h3>
+          <p>Après la préparation, une protection céramique peut faciliter l’entretien courant et renforcer le comportement hydrophobe de la carrosserie. Sa durabilité dépend de la formule, de la préparation et du suivi. Nous expliquons les précautions utiles pour conserver une finition propre et régulière dans le temps.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
       <SectionTitle eyebrow="Avant / Après" title="Des résultats réels" text="Faites glisser le curseur pour comparer." />
       <div class="showcase-stack">
         {cases.map((item) => <BeforeAfter item={item} />)}
       </div>
       <div class="actions"><a class="button secondary" href="/realisations/">Toutes les réalisations</a></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle
+        eyebrow="Questions fréquentes"
+        title="Bien préparer votre demande"
+        text="Quelques réponses pour choisir une prestation et obtenir une estimation cohérente avant votre rendez-vous."
+      />
+      <div class="grid two faq-grid">
+        {faqs.map((item) => (
+          <article class="card">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 
