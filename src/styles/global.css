@@ -340,6 +340,28 @@ h1 {
   text-transform: uppercase;
 }
 
+.home-hero h1 {
+  font-size: clamp(3rem, 7.4vw, 6.6rem);
+}
+
+.home-hero h1 span {
+  display: block;
+  margin-top: 0.18em;
+  color: var(--gold);
+  font-size: 0.42em;
+  line-height: 1.08;
+}
+
+.hero-tagline {
+  margin: 22px 0 0;
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  font-weight: 850;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 h2 {
   max-width: 920px;
   font-size: clamp(2.15rem, 5.4vw, 4.7rem);
@@ -1627,6 +1649,20 @@ a.card:hover {
   h1 {
     font-size: clamp(2.65rem, 14vw, 4.2rem);
     overflow-wrap: anywhere;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2.45rem, 12.5vw, 3.75rem);
+  }
+
+  .home-hero h1 span {
+    font-size: 0.48em;
+  }
+
+  .hero-tagline {
+    margin-top: 18px;
+    font-size: 1.1rem;
+    text-align: center;
   }
 
   h2 {

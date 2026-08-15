@@ -6,12 +6,13 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
 ---
 
 <BaseLayout>
-  <section class="hero">
+  <section class="hero home-hero">
     <div class="hero-layout">
       <div class="hero-inner">
-        <p class="eyebrow">Detailing automobile · Yverdon-les-Bains</p>
-        <h1>Propre. Brillante. Protégée.</h1>
-        <p class="lead">Nettoyage, polissage et protection réalisés avec soin, sur rendez-vous.</p>
+        <p class="eyebrow">Lavage · Polissage · Protection céramique</p>
+        <h1>Detailing automobile <span>à Yverdon-les-Bains</span></h1>
+        <p class="hero-tagline">Propre. Brillante. Protégée.</p>
+        <p class="lead">Nettoyage intérieur et extérieur, polissage et protection réalisés avec soin, sur rendez-vous.</p>
         <div class="hero-actions">
           <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un devis. Je peux envoyer des photos de mon véhicule.")}>Demander un devis</a>
           <a class="button secondary" href="/realisations/">Voir les résultats</a>
@@ -36,7 +37,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
 
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Prestations" title="De quoi votre voiture a-t-elle besoin ?" />
+      <SectionTitle eyebrow="Prestations" title="Prestations de detailing automobile" />
       <div class="grid two">
         {services.map((service) => (
           <a class="card" href={service.href}>
@@ -75,7 +76,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
 
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Avant / Après" title="Des résultats réels" text="Faites glisser le curseur pour comparer." />
+      <SectionTitle eyebrow="Avant / Après" title="Résultats de polissage et nettoyage intérieur" text="Faites glisser le curseur pour comparer." />
       <div class="showcase-stack">
         {cases.map((item) => <BeforeAfter item={item} />)}
       </div>
@@ -87,7 +88,7 @@ import { business, services, cases, faqs, whatsappUrl } from "@/data/site";
     <div class="section-inner">
       <SectionTitle
         eyebrow="Questions fréquentes"
-        title="Bien préparer votre demande"
+        title="Questions sur le detailing automobile"
         text="Quelques réponses pour choisir une prestation et obtenir une estimation cohérente avant votre rendez-vous."
       />
       <div class="grid two faq-grid">
