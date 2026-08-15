@@ -1580,6 +1580,38 @@ a.card:hover {
     line-height: 1.62;
   }
 
+  .section-title {
+    text-align: center;
+  }
+
+  .section-title h2,
+  .section-title p {
+    margin-inline: auto;
+  }
+
+  .lead,
+  .card p,
+  .service-list p,
+  .ba-copy p,
+  .tariff-panel p,
+  .result-box small,
+  .site-footer p {
+    text-align: justify;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+  }
+
+  .contact-whatsapp-list,
+  .field,
+  .mini-table,
+  .price-row,
+  .piece-strip,
+  .vehicle-strip,
+  .location-photo figcaption {
+    text-align: left;
+    hyphens: none;
+  }
+
   .lead {
     font-size: 1.02rem;
   }
