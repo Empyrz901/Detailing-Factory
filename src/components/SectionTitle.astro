@@ -1,8 +1,9 @@
 ---
-const { eyebrow, title, text } = Astro.props;
+const { eyebrow, title, text, as = "h2" } = Astro.props;
+const Heading = as;
 ---
 <div class="section-title">
   {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h2>{title}</h2>
+  <Heading>{title}</Heading>
   {text && <p>{text}</p>}
 </div>

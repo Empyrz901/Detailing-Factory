@@ -1,13 +1,23 @@
 ---
 const { item } = Astro.props;
 const hasComparison = item.before && item.after;
+const webpPath = (src) => src.replace(/\.jpe?g$/i, ".webp");
+const smallWebpPath = (src) => src.replace(/\.jpe?g$/i, "-sm.webp");
+const avifPath = (src) => src.replace(/\.jpe?g$/i, ".avif");
+const smallAvifPath = (src) => src.replace(/\.jpe?g$/i, "-sm.avif");
 ---
 <article class="before-after">
   {hasComparison ? (
     <div class="ba-frame" data-before-after>
-      <img src={item.after} alt={`Après ${item.car}`} loading="lazy" />
+      <picture>
+        <source type="image/avif" srcset={`${smallAvifPath(item.after)} 640w, ${avifPath(item.after)} 1024w`} sizes="(max-width: 980px) calc(100vw - 32px), 720px" />
+        <img src={webpPath(item.after)} srcset={`${smallWebpPath(item.after)} 640w, ${webpPath(item.after)} 1200w`} sizes="(max-width: 980px) calc(100vw - 32px), 720px" alt={`Après ${item.car}`} loading="lazy" width="1179" height="1553" />
+      </picture>
       <div class="ba-before">
-        <img src={item.before} alt={`Avant ${item.car}`} loading="lazy" />
+        <picture>
+          <source type="image/avif" srcset={`${smallAvifPath(item.before)} 640w, ${avifPath(item.before)} 1024w`} sizes="(max-width: 980px) calc(100vw - 32px), 720px" />
+          <img src={webpPath(item.before)} srcset={`${smallWebpPath(item.before)} 640w, ${webpPath(item.before)} 1200w`} sizes="(max-width: 980px) calc(100vw - 32px), 720px" alt={`Avant ${item.car}`} loading="lazy" width="1179" height="1553" />
+        </picture>
       </div>
       <span class="ba-label before">Avant</span>
       <span class="ba-label after">Après</span>

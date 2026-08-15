@@ -1,11 +1,18 @@
 ---
 const { items, labelledBy } = Astro.props;
+const webpPath = (src) => src.replace(/\.jpe?g$/i, ".webp");
+const smallWebpPath = (src) => src.replace(/\.jpe?g$/i, "-sm.webp");
+const avifPath = (src) => src.replace(/\.jpe?g$/i, ".avif");
+const smallAvifPath = (src) => src.replace(/\.jpe?g$/i, "-sm.avif");
 ---
 
 <div class="photo-gallery" aria-labelledby={labelledBy}>
   {items.map((item) => (
     <figure class="photo-card">
-      <img src={item.src} alt={item.alt} loading="lazy" width="1179" height="1558" />
+      <picture>
+        <source type="image/avif" srcset={`${smallAvifPath(item.src)} 640w, ${avifPath(item.src)} 1024w`} sizes="(max-width: 980px) calc(100vw - 32px), 380px" />
+        <img src={webpPath(item.src)} srcset={`${smallWebpPath(item.src)} 640w, ${webpPath(item.src)} 1200w`} sizes="(max-width: 980px) calc(100vw - 32px), 380px" alt={item.alt} loading="lazy" width="1179" height="1558" />
+      </picture>
       <figcaption>
         <span>{item.category}</span>
         <strong>{item.title}</strong>
