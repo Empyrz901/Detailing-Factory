@@ -3,10 +3,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import { whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title="Prendre rendez-vous - Detailing Factory">
+<BaseLayout title="Réserver un detailing à Yverdon | Detailing Factory" description="Préparez votre demande de rendez-vous pour un lavage, nettoyage intérieur, polissage ou une protection céramique à Yverdon-les-Bains.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Rendez-vous" title="Préparer votre demande" text="Cette V1 qualifie la demande avant passage sur WhatsApp. Un calendrier connecté pourra être ajouté ensuite." />
+      <SectionTitle as="h1" eyebrow="Rendez-vous" title="Préparer votre demande" text="Renseignez les informations utiles sur votre véhicule, puis poursuivez la conversation sur WhatsApp." />
       <form class="card" action={whatsappUrl("Bonjour Detailing Factory, je souhaite prendre rendez-vous.")}>
         <div class="form-grid">
           <label class="field">Véhicule<input name="vehicule" placeholder="Ex. BMW Série 3" /></label>

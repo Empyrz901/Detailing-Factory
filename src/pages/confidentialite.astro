@@ -1,6 +1,17 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
 ---
-<BaseLayout title="Politique de confidentialité - Detailing Factory">
-  <section class="section"><div class="section-inner"><h1>Confidentialité</h1><p>Les données envoyées via formulaire ou WhatsApp servent uniquement à traiter les demandes de devis, rendez-vous et questions commerciales. À compléter selon les outils réellement utilisés.</p></div></section>
+<BaseLayout title="Confidentialité du site - Detailing Factory" description="Informations sur le fonctionnement technique du site Detailing Factory et l’utilisation des liens externes vers WhatsApp." robots="noindex, follow">
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle as="h1" eyebrow="Informations" title="Confidentialité du site" text="Cette notice décrit le fonctionnement technique actuel du site avant le lancement officiel de l’activité." />
+      <div class="grid two">
+        <article class="card"><h3>Navigation</h3><p>Le site n’utilise actuellement aucun outil d’analyse d’audience, compte client ou système publicitaire nécessitant le dépôt de cookies de suivi.</p></article>
+        <article class="card"><h3>WhatsApp</h3><p>Les boutons de contact ouvrent le service externe WhatsApp. Les informations que vous choisissez d’y transmettre sont alors traitées selon les conditions de cette plateforme.</p></article>
+        <article class="card"><h3>Formulaire de préparation</h3><p>Les champs de la page Réservation servent à préparer la demande. Le site ne les enregistre pas dans une base de données.</p></article>
+        <article class="card"><h3>Mise à jour avant lancement</h3><p>Une politique complète, identifiant notamment le responsable du traitement et les durées de conservation, sera publiée avant l’ouverture commerciale.</p></article>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

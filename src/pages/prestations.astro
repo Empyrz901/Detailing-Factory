@@ -3,14 +3,19 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import { services, whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title="Prestations detailing automobile - Detailing Factory">
+<BaseLayout title="Prestations de detailing à Yverdon | Detailing Factory" description="Découvrez les prestations de detailing automobile à Yverdon-les-Bains : lavage extérieur, nettoyage intérieur, polissage et protection céramique.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Prestations" title="Quatre services, simplement" text="Choisissez votre besoin principal. Nous adaptons ensuite la formule à votre véhicule." />
+      <SectionTitle as="h1" eyebrow="Prestations" title="Quatre services, simplement" text="Choisissez votre besoin principal. Nous adaptons ensuite la formule à votre véhicule." />
       <div class="grid two">
         {services.map((service) => (
           <a class="card" href={service.href}><h3>{service.title}</h3><p>{service.text}</p></a>
         ))}
+      </div>
+      <div class="steps" style="margin-top:34px">
+        <div class="step"><div><h3>Besoin d’un entretien courant ?</h3><p>Le lavage extérieur et la formule intérieure permettent de retrouver un véhicule propre et agréable au quotidien.</p></div></div>
+        <div class="step"><div><h3>Peinture terne ou micro-rayée ?</h3><p>Le polissage vise à raviver la brillance et à corriger différents niveaux de défauts de surface.</p></div></div>
+        <div class="step"><div><h3>Envie de préserver le résultat ?</h3><p>La protection céramique facilite l’entretien et apporte une protection durable à la carrosserie préparée.</p></div></div>
       </div>
       <div class="actions">
         <a class="button" href="/tarifs/">Voir les tarifs</a>

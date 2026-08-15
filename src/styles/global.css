@@ -222,7 +222,7 @@ textarea:focus-visible {
   background:
     linear-gradient(90deg, rgba(8, 9, 9, 0.94), rgba(8, 9, 9, 0.6) 48%, rgba(8, 9, 9, 0.28)),
     linear-gradient(180deg, rgba(8, 9, 9, 0.1), rgba(8, 9, 9, 0.16) 55%, var(--bg) 100%),
-    url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=2400&q=82") center / cover;
+    url("/images/hero-home.webp") center / cover;
   z-index: -2;
 }
 
@@ -239,7 +239,7 @@ textarea:focus-visible {
   background:
     linear-gradient(90deg, rgba(8, 9, 9, 0.94), rgba(8, 9, 9, 0.58) 48%, rgba(8, 9, 9, 0.3)),
     linear-gradient(180deg, rgba(8, 9, 9, 0.08), rgba(8, 9, 9, 0.18) 55%, var(--bg) 100%),
-    url("https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=2400&q=82") center / cover;
+    url("/images/hero-wash.webp") center / cover;
 }
 
 .hero-inner {
@@ -333,6 +333,13 @@ h1 {
 }
 
 h2 {
+  max-width: 920px;
+  font-size: clamp(2.15rem, 5.4vw, 4.7rem);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.section-title h1 {
   max-width: 920px;
   font-size: clamp(2.15rem, 5.4vw, 4.7rem);
   font-weight: 900;
@@ -615,6 +622,11 @@ a.card:hover {
 .ba-frame img {
   height: 100%;
   object-fit: cover;
+}
+
+.ba-frame picture,
+.photo-card picture {
+  display: contents;
 }
 
 .ba-before {
@@ -1100,7 +1112,7 @@ a.card:hover {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(8, 9, 9, 0.96), rgba(8, 9, 9, 0.68), rgba(8, 9, 9, 0.9)),
-    url("https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=2200&q=82") center / cover;
+    url("/images/hero-tariffs.webp") center / cover;
   z-index: -1;
 }
 
@@ -1595,13 +1607,13 @@ a.card:hover {
   .hero::before {
     background:
       linear-gradient(180deg, rgba(8, 9, 9, 0.74), rgba(8, 9, 9, 0.5) 36%, var(--bg) 100%),
-      url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1200&q=80") center / cover;
+      url("/images/hero-home.webp") center / cover;
   }
 
   .wash-hero::before {
     background:
       linear-gradient(180deg, rgba(8, 9, 9, 0.72), rgba(8, 9, 9, 0.52) 36%, var(--bg) 100%),
-      url("https://images.unsplash.com/photo-1605618313023-d5b77d5d58db?auto=format&fit=crop&w=1200&q=80") center / cover;
+      url("/images/hero-wash.webp") center / cover;
   }
 
   h1 {
@@ -1626,6 +1638,7 @@ a.card:hover {
   }
 
   .section-title h2,
+  .section-title h1,
   .section-title p {
     margin-inline: auto;
   }

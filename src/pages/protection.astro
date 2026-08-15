@@ -3,10 +3,10 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 import { ceramicPrices, whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title="Protection céramique automobile - Detailing Factory">
+<BaseLayout title="Protection céramique à Yverdon | Detailing Factory" description="Protection céramique automobile à Yverdon-les-Bains : préparation de la carrosserie, brillance, hydrophobie et formules de 1 à 3 ans.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Protection céramique" title="Protection longue durée" text="Protection contre les agressions extérieures, les UV, les produits chimiques et les salissures." />
+      <SectionTitle as="h1" eyebrow="Protection céramique" title="Protection longue durée" text="Protection contre les agressions extérieures, les UV, les produits chimiques et les salissures." />
       <div class="benefit-row">
         <span>Hydrophobie extrême</span>
         <span>Brillance durable</span>
@@ -23,6 +23,17 @@ import { ceramicPrices, whatsappUrl } from "@/data/site";
             <span><strong>{row.grand_suv} CHF</strong></span>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Comprendre" title="Ce que la protection céramique apporte" text="La durabilité dépend de la préparation, de l’usage du véhicule et de la qualité de son entretien." />
+      <div class="grid two">
+        <article class="card"><h3>Entretien facilité</h3><p>L’effet hydrophobe limite l’adhérence des salissures et simplifie les lavages réguliers, sans rendre la voiture autonettoyante.</p></article>
+        <article class="card"><h3>Brillance préservée</h3><p>La protection aide à conserver l’aspect de la surface préparée et la profondeur visuelle obtenue avant l’application.</p></article>
+        <article class="card"><h3>Préparation indispensable</h3><p>La carrosserie doit être nettoyée et décontaminée. Un polissage peut être recommandé lorsque des défauts sont visibles.</p></article>
+        <article class="card"><h3>Durée adaptée à l’usage</h3><p>Les formules de 1, 2 ou 3 ans permettent de choisir selon le stationnement, le kilométrage et la fréquence d’entretien.</p></article>
       </div>
     </div>
   </section>

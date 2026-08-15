@@ -3,10 +3,27 @@ import "../styles/global.css";
 import { business, whatsappUrl } from "@/data/site";
 
 const {
-  title = "Detailing Factory - Detailing automobile premium",
-  description = "Detailing automobile premium, polissage, protection longue durée, lavage et intérieur sur rendez-vous.",
-  canonical = Astro.url.pathname
+  title = "Detailing automobile à Yverdon-les-Bains | Detailing Factory",
+  description = "Detailing automobile à Yverdon-les-Bains : nettoyage intérieur, polissage et protection céramique. Demandez votre devis par WhatsApp.",
+  canonical = Astro.url.pathname,
+  robots = "index, follow"
 } = Astro.props;
+
+const canonicalUrl = new URL(canonical, Astro.site);
+const socialImageUrl = new URL("/images/partage-detailing-factory.webp", Astro.site);
+const heroImages = {
+  "/": "/images/hero-home.webp",
+  "/lavage-exterieur/": "/images/hero-wash.webp",
+  "/tarifs/": "/images/hero-tariffs.webp"
+};
+const preloadHero = heroImages[Astro.url.pathname];
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Detailing Factory",
+  url: Astro.site,
+  inLanguage: "fr-CH"
+};
 
 const nav = [
   ["Accueil", "/"],
@@ -31,15 +48,31 @@ const isCurrent = (href: string) => {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(canonical, Astro.site)} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/images/partage-detailing-factory.webp" />
+    {preloadHero && <link rel="preload" as="image" href={preloadHero} type="image/webp" fetchpriority="high" />}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Detailing Factory" />
+    <meta property="og:locale" content="fr_CH" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Detailing Factory à Yverdon-les-Bains" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <meta name="theme-color" content="#101411" />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Accueil Detailing Factory">
+      <a class="brand" href="/">
         <span class="brand-mark">DF</span>
         <span class="brand-name">Detailing <span>Factory</span></span>
       </a>
@@ -62,6 +95,7 @@ const isCurrent = (href: string) => {
         <p>{business.address} · {business.partner}</p>
       </div>
       <div>
+        <a href="/a-propos/">À propos</a>
         <a href="/mentions-legales/">Mentions légales</a>
         <a href="/confidentialite/">Confidentialité</a>
         <a href="/conditions/">Conditions de réservation</a>

@@ -2,14 +2,17 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
 ---
-<BaseLayout title="À propos - Detailing Factory">
+<BaseLayout title="Notre approche du detailing | Detailing Factory" description="Découvrez l’approche Detailing Factory : diagnostic du véhicule, préparation soignée et finitions contrôlées pour un résultat adapté à chaque besoin.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="À propos" title="Votre véhicule. Notre exigence du détail." text="Detailing Factory doit vendre une expertise, une méthode et un niveau d'attention, pas seulement des heures de lavage." />
+      <SectionTitle as="h1" eyebrow="À propos" title="Le détail guide chaque intervention" text="Chaque prestation commence par l’observation du véhicule et se termine par un contrôle attentif du résultat." />
       <div class="grid two">
-        <article class="card"><h3>Méthode</h3><p>Chaque véhicule est évalué selon son état, sa taille, sa contamination, ses défauts et l'objectif du client.</p></article>
-        <article class="card"><h3>Exigence</h3><p>Produits professionnels, gestes précis, finitions contrôlées et restitution sur rendez-vous.</p></article>
+        <article class="card"><h3>Observer avant d’agir</h3><p>L’état, la taille, les matériaux, les défauts visibles et le résultat recherché permettent d’orienter la prestation.</p></article>
+        <article class="card"><h3>Choisir le traitement adapté</h3><p>Nettoyage intérieur, lavage extérieur, polissage ou protection céramique : le niveau d’intervention dépend du besoin réel.</p></article>
+        <article class="card"><h3>Préparer avec soin</h3><p>Une préparation méthodique facilite un travail régulier et protège les zones sensibles du véhicule.</p></article>
+        <article class="card"><h3>Contrôler les finitions</h3><p>Les surfaces traitées sont vérifiées avant restitution afin d’identifier les éventuelles limites et les conseils d’entretien utiles.</p></article>
       </div>
+      <div class="actions"><a class="button" href="/prestations/">Découvrir les prestations</a><a class="button secondary" href="/realisations/">Voir les réalisations</a></div>
     </div>
   </section>
 </BaseLayout>
