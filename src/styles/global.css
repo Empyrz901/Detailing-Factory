@@ -876,6 +876,95 @@ a.card:hover {
   min-height: 130px;
 }
 
+.contact-whatsapp-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.contact-whatsapp-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 58px;
+  padding: 12px 16px;
+  border: 1px solid rgba(37, 211, 102, 0.38);
+  border-radius: 8px;
+  background: rgba(37, 211, 102, 0.08);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-whatsapp-list a:hover {
+  border-color: rgba(37, 211, 102, 0.72);
+  background: rgba(37, 211, 102, 0.14);
+}
+
+.contact-whatsapp-list span {
+  color: var(--green);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-whatsapp-list strong {
+  color: var(--text);
+}
+
+.location-photo {
+  position: relative;
+  min-height: clamp(340px, 52vw, 620px);
+  margin: 22px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.location-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-photo::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(transparent, rgba(5, 6, 6, 0.94));
+}
+
+.location-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: clamp(20px, 4vw, 38px);
+  bottom: clamp(20px, 4vw, 34px);
+  left: clamp(20px, 4vw, 38px);
+  display: grid;
+  gap: 6px;
+}
+
+.location-photo figcaption span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.location-photo figcaption strong {
+  font-size: clamp(1.35rem, 3vw, 2.25rem);
+}
+
+.location-photo figcaption small {
+  color: var(--soft);
+  font-size: 0.95rem;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;

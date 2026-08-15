@@ -9,7 +9,7 @@ import { business, services, cases, whatsappUrl } from "@/data/site";
   <section class="hero">
     <div class="hero-layout">
       <div class="hero-inner">
-        <p class="eyebrow">Detailing automobile · canton de Vaud</p>
+        <p class="eyebrow">Detailing automobile · Yverdon-les-Bains</p>
         <h1>Propre. Brillante. Protégée.</h1>
         <p class="lead">Nettoyage, polissage et protection réalisés avec soin, sur rendez-vous.</p>
         <div class="hero-actions">
@@ -29,7 +29,7 @@ import { business, services, cases, whatsappUrl } from "@/data/site";
   <section class="intro-strip" aria-label="Informations essentielles">
     <div class="section-inner">
       <div><span>01</span><strong>Sur rendez-vous</strong></div>
-      <div><span>02</span><strong>À domicile</strong></div>
+      <div><span>02</span><strong>À Yverdon-les-Bains</strong></div>
       <div><span>03</span><strong>Devis sur photos</strong></div>
     </div>
   </section>
@@ -63,7 +63,8 @@ import { business, services, cases, whatsappUrl } from "@/data/site";
     <div class="section-inner split">
       <SectionTitle eyebrow="Un tarif précis ?" title="Envoyez quelques photos" text="Indiquez le modèle, la prestation souhaitée et votre commune." />
       <div class="card compact-cta">
-        <h3>{business.city}</h3>
+        <h3>{business.address}</h3>
+        <p><strong>{business.partner}</strong></p>
         <p>Nous vous répondons avec une recommandation et une estimation adaptées au véhicule.</p>
         <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite une estimation. Voici mon véhicule et les photos :")}>Écrire sur WhatsApp</a>
       </div>
