@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://detailing-factory.pages.dev/sitemap-index.xml
+Sitemap: https://detailing-factory-880.pages.dev/sitemap-index.xml

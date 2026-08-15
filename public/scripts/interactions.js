@@ -53,7 +53,7 @@ const vehicleLabels = {
 const serviceLabels = {
   lavage: "Lavage complet",
   interieur: "Intérieur express",
-  polissage: "Gloss Enhancement",
+  polissage: "Brillance express",
   protection: "Protection céramique 1 an"
 };
 
@@ -86,16 +86,16 @@ if (configurator) {
     const condition = selectedValue("config-condition");
     const finish = selectedValue("config-finish");
     let recommendation = "Lavage complet";
-    if (need === "brillance") recommendation = "Gloss Enhancement";
-    if (need === "micro-rayures") recommendation = "One Step";
-    if (need === "defauts") recommendation = "Two Step";
-    if (need === "protection") recommendation = "Protection longue durée";
+    if (need === "brillance") recommendation = "Brillance express";
+    if (need === "micro-rayures") recommendation = "Polissage en une étape";
+    if (need === "defauts") recommendation = "Polissage en deux étapes";
+    if (need === "protection") recommendation = "Protection céramique longue durée";
     if (need === "interieur") recommendation = "Detailing intérieur";
     const family = need === "interieur" ? "interieur" : need === "protection" ? "protection" : need === "lavage" ? "lavage" : "polissage";
     const price = prices[vehicle]?.[family] || prices.citadine.polissage;
     result.innerHTML = `<span>Votre prestation semble correspondre à</span><strong>${recommendation}</strong><small>À partir de ${price} CHF, à confirmer après analyse des photos.</small>`;
     const message = `Bonjour Detailing Factory,\n\nJe souhaite recevoir une estimation.\n\nVéhicule : ${vehicleLabels[vehicle] || "Non précisé"}\nBesoin : ${recommendation}\nRésultat recherché : ${finish || "Non précisé"}\nÉtat : ${condition || "Non précisé"}\n\nJe peux envoyer des photos du véhicule.`;
-    cta.href = `https://wa.me/41765362109?text=${encodeURIComponent(message)}`;
+    cta.href = `https://wa.me/41779010932?text=${encodeURIComponent(message)}`;
   };
   configurator.querySelectorAll("input").forEach((input) => input.addEventListener("change", updateConfig));
   updateConfig();

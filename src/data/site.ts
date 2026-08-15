@@ -2,11 +2,11 @@ export const business = {
   name: "Detailing Factory",
   city: "Yverdon-les-Bains",
   area: "Yverdon-les-Bains et alentours",
-  phoneDisplay: "+41 76 536 21 09",
-  whatsappNumber: "41765362109",
+  phoneDisplay: "+41 77 901 09 32",
+  whatsappNumber: "41779010932",
   phones: [
-    { display: "+41 76 536 21 09", whatsappNumber: "41765362109" },
-    { display: "+41 77 901 09 32", whatsappNumber: "41779010932" }
+    { display: "+41 77 901 09 32", whatsappNumber: "41779010932" },
+    { display: "+41 76 536 21 09", whatsappNumber: "41765362109" }
   ],
   address: "Avenue de Grandson 43 - Yverdon-les-Bains",
   partner: "Partenaire Auto Center",
@@ -33,8 +33,8 @@ export const services = [
     href: "/polissage/"
   },
   {
-    title: "Protection",
-    text: "Protection durable de la carrosserie.",
+    title: "Protection céramique",
+    text: "Protection céramique durable de la carrosserie.",
     href: "/protection/"
   }
 ];
@@ -57,13 +57,13 @@ export const prestationLabels = {
   lavage: "Lavage",
   interieur: "Intérieur",
   polissage: "Polissage",
-  protection: "Protection"
+  protection: "Protection céramique"
 };
 
 export const polishingPrices = [
-  { service: "Gloss Enhancement", detail: "Brillance express", citadine: 300, berline: 350, suv: 400, grand_suv: 450 },
-  { service: "One Step", detail: "Correction légère et brillance intense", citadine: 450, berline: 550, suv: 650, grand_suv: 750 },
-  { service: "Two Step", detail: "Correction avancée et finition parfaite", citadine: 750, berline: 900, suv: 1050, grand_suv: 1200 }
+  { service: "Brillance express", detail: "Ravive l’éclat de la carrosserie", citadine: 300, berline: 350, suv: 400, grand_suv: 450 },
+  { service: "Polissage en une étape", detail: "Correction légère et brillance intense", citadine: 450, berline: 550, suv: 650, grand_suv: 750 },
+  { service: "Polissage en deux étapes", detail: "Correction avancée et finition parfaite", citadine: 750, berline: 900, suv: 1050, grand_suv: 1200 }
 ];
 
 export const ceramicPrices = [
@@ -195,8 +195,8 @@ export const faqs = [
     a: "Non. Il corrige surtout les micro-rayures et défauts de surface. Les rayures profondes nécessitent une analyse avant confirmation."
   },
   {
-    q: "Quelle différence entre One Step et Two Step ?",
-    a: "Le One Step vise une forte amélioration visuelle en une étape. Le Two Step ajoute une correction plus avancée et une finition plus poussée."
+    q: "Quelle différence entre le polissage en une étape et en deux étapes ?",
+    a: "Le polissage en une étape vise une forte amélioration visuelle. Le polissage en deux étapes ajoute une correction plus avancée et une finition plus poussée."
   },
   {
     q: "Le prix affiché est-il définitif ?",

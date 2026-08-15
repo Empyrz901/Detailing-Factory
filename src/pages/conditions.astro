@@ -1,16 +1,58 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import SectionTitle from "@/components/SectionTitle.astro";
+import { whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title="Conditions de réservation - Detailing Factory">
+<BaseLayout
+  title="Conditions de réservation - Detailing Factory"
+  description="Consultez les conditions de réservation, d’annulation et de préparation du véhicule pour votre rendez-vous chez Detailing Factory."
+>
   <section class="section">
     <div class="section-inner">
-      <h1>Conditions de réservation</h1>
-      <div class="grid two" style="margin-top:28px">
-        <article class="card"><h3>Réservation</h3><p>Les rendez-vous sont confirmés après validation de la prestation, du véhicule et du créneau.</p></article>
-        <article class="card"><h3>Annulation et retard</h3><p>Les conditions d'annulation, d'acompte et de retard sont à adapter aux règles réelles de l'entreprise.</p></article>
-        <article class="card"><h3>Véhicule très sale</h3><p>Un supplément peut être appliqué après inspection si l'état dépasse le cadre prévu.</p></article>
-        <article class="card"><h3>Objets personnels et animaux</h3><p>Le client doit retirer ses objets personnels. Les poils d'animaux peuvent nécessiter une option spécifique.</p></article>
+      <SectionTitle
+        eyebrow="Informations pratiques"
+        title="Conditions de réservation"
+        text="Ces quelques règles nous permettent de préparer votre prestation et de respecter les rendez-vous de chacun."
+      />
+      <div class="grid two conditions-grid">
+        <article class="card condition-card">
+          <span>01</span>
+          <h3>Confirmation du rendez-vous</h3>
+          <p>Le rendez-vous est confirmé après validation de la prestation, du véhicule, du tarif estimatif et du créneau avec notre équipe.</p>
+        </article>
+        <article class="card condition-card">
+          <span>02</span>
+          <h3>Annulation ou empêchement</h3>
+          <p>En cas d’empêchement, prévenez-nous dès que possible par WhatsApp. Nous vous proposerons un nouveau créneau selon les disponibilités.</p>
+        </article>
+        <article class="card condition-card">
+          <span>03</span>
+          <h3>Retard</h3>
+          <p>Un retard peut réduire le temps disponible pour la prestation. S’il ne permet plus de réaliser le travail dans de bonnes conditions, le rendez-vous pourra être déplacé.</p>
+        </article>
+        <article class="card condition-card">
+          <span>04</span>
+          <h3>État du véhicule et tarif</h3>
+          <p>Les tarifs annoncés sont confirmés après examen des photos ou inspection du véhicule. Tout travail supplémentaire est expliqué et validé avec vous avant intervention.</p>
+        </article>
+        <article class="card condition-card">
+          <span>05</span>
+          <h3>Préparation du véhicule</h3>
+          <p>Merci de retirer vos objets personnels et de signaler les zones fragiles, réparations récentes ou défauts particuliers avant le début de la prestation.</p>
+        </article>
+        <article class="card condition-card">
+          <span>06</span>
+          <h3>Résultat de la prestation</h3>
+          <p>Certaines taches, rayures profondes ou détériorations permanentes ne peuvent pas toujours être supprimées. Nous vous informons des limites constatées avant ou pendant le travail.</p>
+        </article>
       </div>
+      <aside class="conditions-contact">
+        <div>
+          <p class="eyebrow">Une question avant votre rendez-vous ?</p>
+          <h2>Parlons-en directement</h2>
+        </div>
+        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, j’ai une question concernant les conditions de réservation.")} target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+      </aside>
     </div>
   </section>
 </BaseLayout>

@@ -5,11 +5,11 @@ import BeforeAfter from "@/components/BeforeAfter.astro";
 import PhotoGallery from "@/components/PhotoGallery.astro";
 import { business, polishingCases, polishingGallery, polishingPrices, whatsappUrl } from "@/data/site";
 ---
-<BaseLayout title={`Polissage voiture dans le ${business.city} - Detailing Factory`} description={`Polissage voiture dans le ${business.city}. Gloss Enhancement, One Step, Two Step et correction des micro-rayures sur rendez-vous.`}>
+<BaseLayout title={`Polissage voiture dans le ${business.city} - Detailing Factory`} description={`Polissage voiture dans le ${business.city}. Brillance express, polissage en une ou deux étapes et correction des micro-rayures sur rendez-vous.`}>
   <section class="hero">
     <div class="hero-inner">
       <p class="eyebrow">Polissage voiture dans le {business.city}</p>
-      <h1>Polissage One Step</h1>
+      <h1>Polissage en une étape</h1>
       <p class="lead">Éliminer les micro-rayures, raviver la brillance et redonner de l'éclat à votre véhicule.</p>
       <div class="hero-actions">
         <a class="button" href="/tarifs/">Voir les tarifs</a>
@@ -23,7 +23,7 @@ import { business, polishingCases, polishingGallery, polishingPrices, whatsappUr
       <div class="steps">
         <div class="step"><div><h3>Analyse</h3><p>Inspection visuelle, photos ou contrôle sur place pour comprendre les défauts.</p></div></div>
         <div class="step"><div><h3>Préparation</h3><p>Lavage, décontamination et masquage des zones sensibles.</p></div></div>
-        <div class="step"><div><h3>Correction</h3><p>Gloss Enhancement, One Step ou Two Step selon l'objectif.</p></div></div>
+        <div class="step"><div><h3>Correction</h3><p>Brillance express, polissage en une étape ou en deux étapes selon l'objectif.</p></div></div>
         <div class="step"><div><h3>Finition</h3><p>Contrôle du résultat et recommandation de protection.</p></div></div>
       </div>
     </div>
@@ -54,7 +54,7 @@ import { business, polishingCases, polishingGallery, polishingPrices, whatsappUr
           </div>
         ))}
       </div>
-      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite savoir si mon véhicule a besoin d'un Gloss Enhancement, One Step ou Two Step.")}>Demander conseil</a></div>
+      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite savoir si mon véhicule a besoin d'une brillance express, d'un polissage en une étape ou en deux étapes.")}>Demander conseil</a></div>
     </div>
   </section>
 </BaseLayout>

@@ -990,6 +990,47 @@ a.card:hover {
   font-size: 0.95rem;
 }
 
+.conditions-grid {
+  counter-reset: condition;
+}
+
+.condition-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
+.condition-card > span {
+  color: var(--gold);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.condition-card p {
+  margin: 0;
+}
+
+.conditions-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 22px;
+  border: 1px solid rgba(214, 181, 109, 0.34);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(214, 181, 109, 0.12), rgba(255, 255, 255, 0.03));
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.conditions-contact h2 {
+  font-size: clamp(1.65rem, 4vw, 3rem);
+}
+
+.conditions-contact .eyebrow {
+  margin-bottom: 10px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -1883,6 +1924,12 @@ a.card:hover {
 
   .location-photo {
     min-height: 330px;
+  }
+
+  .conditions-contact {
+    align-items: stretch;
+    flex-direction: column;
+    text-align: center;
   }
 }
 
