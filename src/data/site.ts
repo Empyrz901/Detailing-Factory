@@ -1,14 +1,19 @@
 export const business = {
   name: "Detailing Factory",
-  city: "canton de Vaud",
-  area: "canton de Vaud et alentours",
-  phoneDisplay: "+41 76 123 45 67",
-  whatsappNumber: "41761234567",
-  email: "contact@detailing-factory.ch",
-  address: "Déplacement à domicile - canton de Vaud",
+  city: "Yverdon-les-Bains",
+  area: "Yverdon-les-Bains et alentours",
+  phoneDisplay: "+41 76 536 21 09",
+  whatsappNumber: "41765362109",
+  phones: [
+    { display: "+41 76 536 21 09", whatsappNumber: "41765362109" },
+    { display: "+41 77 901 09 32", whatsappNumber: "41779010932" }
+  ],
+  address: "Avenue de Grandson 43 - Yverdon-les-Bains",
+  partner: "Partenaire Auto Center",
+  locationImage: "/images/auto-center-yverdon.png",
   instagram: "@detailing_factory_ch",
   googleRating: "5.0",
-  mapUrl: "https://maps.google.com/?q=Detailing%20Factory"
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Avenue%20de%20Grandson%2043%2C%20Yverdon-les-Bains"
 };
 
 export const services = [
@@ -203,6 +208,6 @@ export const faqs = [
   }
 ];
 
-export function whatsappUrl(message: string) {
-  return `https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent(message)}`;
+export function whatsappUrl(message: string, number = business.whatsappNumber) {
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
 }

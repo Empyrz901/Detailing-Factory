@@ -6,24 +6,36 @@ import { business, whatsappUrl } from "@/data/site";
 <BaseLayout title="Contact - Detailing Factory">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle eyebrow="Contact" title="Demander un devis ou préparer un rendez-vous" />
+      <SectionTitle eyebrow="Contact" title="Demander un devis ou préparer un rendez-vous" text="Réservez directement par WhatsApp auprès de notre équipe." />
       <div class="grid two">
         <article class="card">
-          <h3>Detailing Factory - {business.city}</h3>
+          <h3>Detailing Factory</h3>
           <p>{business.address}</p>
-          <p>{business.phoneDisplay}</p>
-          <p>{business.email}</p>
+          <p><strong>{business.partner}</strong></p>
           <p>Zone couverte : {business.area}</p>
-          <div class="actions">
-            <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis.")}>WhatsApp</a>
-            <a class="button secondary" href={business.mapUrl}>Itinéraire</a>
+          <div class="contact-whatsapp-list" aria-label="Numéros WhatsApp">
+            {business.phones.map((phone, index) => (
+              <a href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis.", phone.whatsappNumber)} target="_blank" rel="noopener">
+                <span>WhatsApp {index + 1}</span>
+                <strong>{phone.display}</strong>
+              </a>
+            ))}
           </div>
+          <div class="actions"><a class="button secondary" href={business.mapUrl} target="_blank" rel="noopener">Voir l’itinéraire</a></div>
         </article>
         <article class="card">
           <h3>Message conseillé</h3>
           <p>Bonjour, je souhaite obtenir un devis. Mon véhicule est une [marque/modèle]. Je cherche [lavage/intérieur/polissage/protection]. Je peux envoyer 3 à 5 photos.</p>
         </article>
       </div>
+      <figure class="location-photo">
+        <img src={business.locationImage} alt="Auto Center à l’Avenue de Grandson 43 à Yverdon-les-Bains, partenaire de Detailing Factory" loading="lazy" />
+        <figcaption>
+          <span>Nous trouver</span>
+          <strong>{business.address}</strong>
+          <small>{business.partner}</small>
+        </figcaption>
+      </figure>
     </div>
   </section>
 </BaseLayout>
