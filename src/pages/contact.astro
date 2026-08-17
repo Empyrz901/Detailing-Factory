@@ -13,6 +13,7 @@ import { business, whatsappUrl } from "@/data/site";
           <p>{business.address}</p>
           <p><strong>{business.partner}</strong></p>
           <p>Zone couverte : {business.area}</p>
+          <p>Email : <a href={`mailto:${business.email}`}>{business.email}</a></p>
           <div class="contact-whatsapp-list" aria-label="Numéros WhatsApp">
             {business.phones.map((phone, index) => (
               <a href={whatsappUrl("Bonjour Detailing Factory, je souhaite obtenir un devis.", phone.whatsappNumber)} target="_blank" rel="noopener">
@@ -21,7 +22,10 @@ import { business, whatsappUrl } from "@/data/site";
               </a>
             ))}
           </div>
-          <div class="actions"><a class="button secondary" href={business.mapUrl} target="_blank" rel="noopener">Voir l’itinéraire</a></div>
+          <div class="actions">
+            <a class="button secondary" href={`mailto:${business.email}`}>Email</a>
+            <a class="button secondary" href={business.mapUrl} target="_blank" rel="noopener">Voir l’itinéraire</a>
+          </div>
         </article>
         <article class="card">
           <h3>Message conseillé</h3>
