@@ -106,7 +106,7 @@ export const polishingCases = [
   },
   {
     title: "Polissage de finition",
-    car: "Pavillon noir métallisé",
+    car: "Capot noir métallisé",
     goal: "Correction du voile et des micro-rayures révélés par l'éclairage de contrôle.",
     before: "/images/realisations/polissage/pavillon-micro-rayures-avant.jpeg",
     after: "/images/realisations/polissage/pavillon-micro-rayures-apres.jpeg"
