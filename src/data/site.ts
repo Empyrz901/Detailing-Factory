@@ -4,6 +4,7 @@ export const business = {
   area: "Yverdon-les-Bains et alentours",
   phoneDisplay: "+41 77 901 09 32",
   whatsappNumber: "41779010932",
+  email: "contact@detailingfactory.ch",
   phones: [
     { display: "+41 77 901 09 32", whatsappNumber: "41779010932" },
     { display: "+41 76 536 21 09", whatsappNumber: "41765362109" }
@@ -105,7 +106,7 @@ export const polishingCases = [
   },
   {
     title: "Polissage de finition",
-    car: "Pavillon noir métallisé",
+    car: "Capot noir métallisé",
     goal: "Correction du voile et des micro-rayures révélés par l'éclairage de contrôle.",
     before: "/images/realisations/polissage/pavillon-micro-rayures-avant.jpeg",
     after: "/images/realisations/polissage/pavillon-micro-rayures-apres.jpeg"
