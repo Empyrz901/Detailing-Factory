@@ -9,10 +9,15 @@ export const business = {
     { display: "+41 77 901 09 32", whatsappNumber: "41779010932" },
     { display: "+41 76 536 21 09", whatsappNumber: "41765362109" }
   ],
+  streetAddress: "Avenue de Grandson 43",
+  postalCode: "1400",
+  addressLocality: "Yverdon-les-Bains",
+  addressCountry: "CH",
   address: "Avenue de Grandson 43 - Yverdon-les-Bains",
   partner: "Partenaire Auto Center",
   locationImage: "/images/auto-center-yverdon.webp",
   instagram: "@detailing_factory_ch",
+  instagramUrl: "https://www.instagram.com/detailing_factory_ch/",
   googleRating: "5.0",
   mapUrl: "https://www.google.com/maps/search/?api=1&query=Avenue%20de%20Grandson%2043%2C%20Yverdon-les-Bains"
 };

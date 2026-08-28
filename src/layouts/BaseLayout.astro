@@ -8,6 +8,7 @@ const {
   canonical = Astro.url.pathname,
   robots = "index, follow"
 } = Astro.props;
+const isIndexable = !robots.includes("noindex");
 
 const canonicalUrl = new URL(canonical, Astro.site);
 const socialImageUrl = new URL("/images/partage-detailing-factory.webp", Astro.site);
@@ -23,6 +24,45 @@ const websiteSchema = {
   name: "Detailing Factory",
   url: Astro.site,
   inLanguage: "fr-CH"
+};
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "@id": new URL("/#business", Astro.site).toString(),
+  name: business.name,
+  url: Astro.site?.toString(),
+  image: socialImageUrl.toString(),
+  telephone: business.phoneDisplay,
+  email: business.email,
+  priceRange: "CHF",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.streetAddress,
+    postalCode: business.postalCode,
+    addressLocality: business.addressLocality,
+    addressCountry: business.addressCountry
+  },
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: business.area
+  },
+  sameAs: [business.instagramUrl],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Prestations de detailing automobile",
+    itemListElement: [
+      "Lavage extérieur",
+      "Nettoyage intérieur automobile",
+      "Polissage automobile",
+      "Protection céramique"
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name
+      }
+    }))
+  }
 };
 
 const nav = [
@@ -71,6 +111,7 @@ const isCurrent = (href: string) => {
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="theme-color" content="#101411" />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+    {isIndexable && <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)}></script>}
   </head>
   <body>
     <header class="site-header">
