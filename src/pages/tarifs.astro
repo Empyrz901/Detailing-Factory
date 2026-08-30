@@ -116,13 +116,13 @@ const vehicles = [
           <p class="eyebrow">Formule express</p>
           <h3>Rapide et efficace</h3>
           <p>Aspirateur complet habitacle et coffre, finition soignée, nettoyage des vitres intérieures et extérieures.</p>
+          <div class="vehicle-strip">
+            <div><span>Citadine</span><strong>60 CHF</strong></div>
+            <div><span>Berline</span><strong>80 CHF</strong></div>
+            <div><span>Espace / 4x4</span><strong>100 CHF</strong></div>
+          </div>
         </div>
-        <div class="big-price"><strong>60 CHF</strong><span>à partir de</span></div>
-      </div>
-      <div class="vehicle-strip">
-        <div><span>Citadine</span><strong>60 CHF</strong></div>
-        <div><span>Berline</span><strong>80 CHF</strong></div>
-        <div><span>Espace / 4x4</span><strong>100 CHF</strong></div>
+        <div class="big-price"><span>à partir de</span><strong>60</strong><em>CHF</em></div>
       </div>
       <div class="option-grid">
         {interiorOptions.map((option) => <article><h3>{option.name}</h3><strong>{option.price} CHF</strong></article>)}

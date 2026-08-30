@@ -175,7 +175,7 @@ export const cases = [polishingCases[0], interiorCases[0], interiorCases[5]];
 export const polishingGallery = [
   { src: "/images/realisations/polissage/comparatif-capot-noir-avant-apres.jpeg", alt: "Comparatif avant après sur un capot noir poli", category: "Comparatif", title: "Brillance retrouvée" },
   { src: "/images/realisations/polissage/carrosserie-bleue-masquage-preparation.jpeg", alt: "Carrosserie bleue protégée par un masquage avant polissage", category: "Préparation", title: "Masquage des zones sensibles" },
-  { src: "/images/realisations/polissage/carrosserie-bleue-polissage-capot.jpeg", alt: "Polissage mécanique d'un capot bleu", category: "Correction", title: "Travail du capot" },
+  { src: "/images/realisations/polissage/carrosserie-bleue-polissage-capot.jpeg", alt: "Polissage mécanique d'un coffre et d'un aileron bleus", category: "Correction", title: "Travail du coffre et de l'aileron" },
   { src: "/images/realisations/polissage/carrosserie-bleue-polissage-aile.jpeg", alt: "Polissage mécanique d'une aile bleue", category: "Correction", title: "Travail des courbes" },
   { src: "/images/realisations/polissage/carrosserie-bleue-defauts-avant.jpeg", alt: "Micro-rayures visibles sous une lumière de contrôle", category: "Diagnostic", title: "Défauts sous éclairage" },
   { src: "/images/realisations/polissage/carrosserie-bleue-finition-apres.jpeg", alt: "Finition brillante d'une carrosserie bleue après polissage", category: "Résultat", title: "Reflets et profondeur" },

@@ -1312,35 +1312,74 @@ a.card:hover {
 
 .interior-price {
   display: grid;
-  grid-template-columns: 1fr minmax(190px, 0.28fr);
-  gap: 28px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.32fr);
+  gap: clamp(22px, 4vw, 46px);
+  align-items: stretch;
   border: 1px solid rgba(247, 243, 234, 0.12);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.025);
-  padding: clamp(24px, 4vw, 38px);
+  background:
+    linear-gradient(135deg, rgba(214, 181, 109, 0.08), transparent 45%),
+    rgba(255, 255, 255, 0.026);
+  padding: clamp(22px, 4vw, 38px);
   box-shadow: var(--shadow);
+}
+
+.interior-price > div:first-child {
+  align-self: center;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.interior-price h3 {
+  max-width: 620px;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.04;
+}
+
+.interior-price p:not(.eyebrow) {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 18px;
 }
 
 .big-price {
   display: grid;
-  place-items: center;
-  min-height: 190px;
+  align-content: center;
+  justify-items: center;
+  min-height: 210px;
+  padding: clamp(24px, 3vw, 34px);
   border: 1px solid rgba(214, 181, 109, 0.6);
   border-radius: 8px;
-  background: linear-gradient(180deg, #d6b56d, #8f691d);
+  background:
+    linear-gradient(160deg, #ead486 0%, #c9aa4c 48%, #856414 100%);
   color: #11100c;
+  text-align: center;
   text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .big-price strong {
-  font-size: clamp(2.6rem, 7vw, 5rem);
-  line-height: 1;
+  font-size: clamp(4.8rem, 8vw, 6.8rem);
+  font-weight: 950;
+  line-height: 0.82;
 }
 
 .big-price span {
+  order: -1;
+  margin-bottom: 16px;
+  font-size: 0.76rem;
   font-weight: 900;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
+}
+
+.big-price em {
+  font-style: normal;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 950;
+  line-height: 0.95;
+  letter-spacing: 0;
 }
 
 .vehicle-strip {
@@ -1351,28 +1390,56 @@ a.card:hover {
   text-align: center;
 }
 
+.interior-price .vehicle-strip {
+  gap: 10px;
+  margin-top: 28px;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.interior-price .vehicle-strip > div {
+  min-height: 82px;
+  border: 1px solid rgba(247, 243, 234, 0.12);
+  border-radius: 8px;
+  background: rgba(8, 9, 9, 0.38);
+}
+
 .option-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .option-grid article {
-  min-height: 170px;
+  position: relative;
+  min-height: 136px;
   display: grid;
-  align-content: end;
-  gap: 18px;
+  align-content: space-between;
+  justify-items: center;
+  gap: 24px;
   border: 1px solid rgba(247, 243, 234, 0.12);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(214, 181, 109, 0.07), transparent),
+    linear-gradient(180deg, rgba(214, 181, 109, 0.09), transparent 58%),
     var(--panel);
-  padding: 18px;
+  padding: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.option-grid article::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), rgba(214, 181, 109, 0.08));
 }
 
 .option-grid h3 {
   font-size: 1rem;
+  line-height: 1.18;
   text-transform: uppercase;
 }
 
@@ -1522,6 +1589,14 @@ a.card:hover {
   .vehicle-strip > div {
     border-right: 0;
     border-bottom: 1px solid rgba(214, 181, 109, 0.18);
+  }
+
+  .interior-price .vehicle-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .interior-price .vehicle-strip > div {
+    border: 1px solid rgba(247, 243, 234, 0.12);
   }
 
   .option-grid {
@@ -1877,6 +1952,14 @@ a.card:hover {
 
   .big-price strong {
     font-size: 3rem;
+  }
+
+  .big-price em {
+    font-size: 1.9rem;
+  }
+
+  .interior-price .vehicle-strip {
+    grid-template-columns: 1fr;
   }
 
   .site-footer {
