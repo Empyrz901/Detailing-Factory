@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
-import { business } from "@/data/site";
+import { business, googleReviews } from "@/data/site";
 ---
 <BaseLayout title="Avis clients à Yverdon | Detailing Factory" description={`Detailing Factory est noté ${business.googleRating.replace(".", ",")}/5 sur Google d’après ${business.googleReviewCount} avis clients. Consultez les avis authentiques sur la fiche Google.`}>
   <section class="section">
@@ -25,6 +25,16 @@ import { business } from "@/data/site";
             <a class="button secondary" href="/realisations/">Voir les réalisations</a>
           </div>
         </article>
+      </div>
+      <div class="grid three review-grid">
+        {googleReviews.map((review) => (
+          <article class="card review-card">
+            <p class="review-stars" aria-label={`${review.rating} étoiles sur 5`}><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>« {review.text} »</blockquote>
+            <p class="review-author"><strong>{review.author}</strong><span>Avis publié sur Google</span></p>
+            <a href={business.googleProfileUrl} target="_blank" rel="noopener">Consulter la source</a>
+          </article>
+        ))}
       </div>
     </div>
   </section>

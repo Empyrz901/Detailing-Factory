@@ -37,7 +37,7 @@ Ce document recense les éléments à compléter lorsque l’entreprise Detailin
 - Horaires par jour
 - Jours de fermeture
 - Zone géographique réellement couverte
-- Confirmation du service à domicile ou uniquement sur place
+- Mode de service confirmé : prestations uniquement à l’atelier, sans déplacement à domicile
 - Moyens de paiement acceptés
 
 ### Réservation et conditions commerciales

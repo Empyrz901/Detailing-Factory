@@ -2,6 +2,7 @@ export const business = {
   name: "Detailing Factory",
   city: "Yverdon-les-Bains",
   area: "Yverdon-les-Bains et alentours",
+  serviceMode: "Prestations réalisées uniquement à l’atelier",
   phoneDisplay: "+41 77 901 09 32",
   whatsappNumber: "41779010932",
   email: "contact@detailingfactory.ch",
@@ -47,6 +48,24 @@ export const services = [
     title: "Protection céramique",
     text: "Protection céramique durable de la carrosserie.",
     href: "/protection/"
+  }
+];
+
+export const googleReviews = [
+  {
+    author: "Jonas Wumba",
+    rating: 5,
+    text: "Le service est impeccable !"
+  },
+  {
+    author: "Giulia",
+    rating: 5,
+    text: "Très satisfaite du nettoyage intérieur et extérieur de ma voiture ! Le travail a été réalisé avec beaucoup de soin…"
+  },
+  {
+    author: "Miguel",
+    rating: 5,
+    text: "Un service 5 étoiles ! Nettoyage impeccable, je recommande vivement."
   }
 ];
 

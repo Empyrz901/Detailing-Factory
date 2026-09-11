@@ -12,7 +12,7 @@ import { business, whatsappUrl } from "@/data/site";
           <h3>Detailing Factory</h3>
           <p>{business.address}</p>
           <p><strong>{business.partner}</strong></p>
-          <p>Zone couverte : {business.area}</p>
+          <p>{business.serviceMode}</p>
           <p>Email : <a href={`mailto:${business.email}`}>{business.email}</a></p>
           <div class="contact-whatsapp-list" aria-label="Numéros WhatsApp">
             {business.phones.map((phone, index) => (
