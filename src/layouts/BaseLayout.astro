@@ -35,18 +35,25 @@ const localBusinessSchema = {
   telephone: business.phoneDisplay,
   email: business.email,
   priceRange: "CHF",
+  hasMap: business.mapUrl,
   address: {
     "@type": "PostalAddress",
     streetAddress: business.streetAddress,
     postalCode: business.postalCode,
     addressLocality: business.addressLocality,
+    addressRegion: business.addressRegion,
     addressCountry: business.addressCountry
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: business.latitude,
+    longitude: business.longitude
   },
   areaServed: {
     "@type": "AdministrativeArea",
     name: business.area
   },
-  sameAs: [business.instagramUrl],
+  sameAs: [business.instagramUrl, business.googleProfileUrl],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Prestations de detailing automobile",
@@ -139,6 +146,7 @@ const isCurrent = (href: string) => {
         <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
       </div>
       <div>
+        <a href="/avis/">Avis clients</a>
         <a href="/a-propos/">À propos</a>
         <a href="/mentions-legales/">Mentions légales</a>
         <a href="/confidentialite/">Confidentialité</a>

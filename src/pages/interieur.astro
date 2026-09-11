@@ -8,7 +8,7 @@ import { interiorCases, interiorGallery, interiorOptions, whatsappUrl } from "@/
 <BaseLayout title="Nettoyage intérieur automobile à Yverdon | Detailing Factory" description="Nettoyage intérieur automobile à Yverdon-les-Bains : aspiration, habitacle, coffre, vitres et options textiles dès 60 CHF.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle as="h1" eyebrow="Intérieur" title="Formule express" text="Rapide, efficace et soignée : aspirateur complet, habitacle et coffre, vitres intérieures et extérieures." />
+      <SectionTitle as="h1" eyebrow="Intérieur" title="Nettoyage intérieur automobile à Yverdon-les-Bains" text="Une formule soignée comprenant l’aspiration de l’habitacle et du coffre ainsi que le nettoyage des vitres intérieures et extérieures." />
       <div class="interior-price">
         <div>
           <p class="eyebrow">À partir de</p>
@@ -37,6 +37,22 @@ import { interiorCases, interiorGallery, interiorOptions, whatsappUrl } from "@/
 
   <section class="section alt">
     <div class="section-inner">
+      <SectionTitle eyebrow="Detailing intérieur" title="Une intervention adaptée aux matériaux et aux salissures" text="L’état des sièges, tapis, plastiques et zones de contact est vérifié avant de recommander les options utiles." />
+      <div class="grid two">
+        <article class="card">
+          <h2>Ce que comprend la formule</h2>
+          <p>L’aspiration concerne l’habitacle et le coffre. Les surfaces accessibles et les vitres sont nettoyées avec une méthode adaptée, puis les finitions sont contrôlées avant la restitution du véhicule.</p>
+        </article>
+        <article class="card">
+          <h2>Quand prévoir des options ?</h2>
+          <p>Les taches incrustées, les poils d’animaux, les sièges en tissu ou le plafonnier demandent un traitement supplémentaire. Des photos permettent de confirmer le travail nécessaire et d’éviter un supplément imprévu.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-inner">
       <SectionTitle eyebrow="Avant / Après" title="Le nettoyage en détail" text="Sièges, tapis et contre-portes : comparez la même zone avant et après intervention." />
       <div class="showcase-stack">
         {interiorCases.slice(0, 2).map((item) => <BeforeAfter item={item} />)}
@@ -44,7 +60,7 @@ import { interiorCases, interiorGallery, interiorOptions, whatsappUrl } from "@/
     </div>
   </section>
 
-  <section class="section">
+  <section class="section alt">
     <div class="section-inner">
       <SectionTitle eyebrow="Réalisations" title="Habitacles nettoyés" text="Quelques vues d'ensemble et détails de véhicules traités par Detailing Factory." />
       <PhotoGallery items={interiorGallery.slice(0, 6)} labelledBy="galerie-habitacles" />

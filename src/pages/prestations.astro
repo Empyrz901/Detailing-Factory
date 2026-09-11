@@ -6,7 +6,7 @@ import { services, whatsappUrl } from "@/data/site";
 <BaseLayout title="Prestations de detailing à Yverdon | Detailing Factory" description="Découvrez les prestations de detailing automobile à Yverdon-les-Bains : lavage extérieur, nettoyage intérieur, polissage et protection céramique.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle as="h1" eyebrow="Prestations" title="Quatre services, simplement" text="Choisissez votre besoin principal. Nous adaptons ensuite la formule à votre véhicule." />
+      <SectionTitle as="h1" eyebrow="Prestations" title="Prestations de detailing automobile à Yverdon-les-Bains" text="Choisissez votre besoin principal. Nous adaptons ensuite la formule à l’état, à la taille et à l’usage de votre véhicule." />
       <div class="grid two">
         {services.map((service) => (
           <a class="card" href={service.href}><h3>{service.title}</h3><p>{service.text}</p></a>
@@ -16,6 +16,17 @@ import { services, whatsappUrl } from "@/data/site";
         <div class="step"><div><h3>Besoin d’un entretien courant ?</h3><p>Le lavage extérieur et la formule intérieure permettent de retrouver un véhicule propre et agréable au quotidien.</p></div></div>
         <div class="step"><div><h3>Peinture terne ou micro-rayée ?</h3><p>Le polissage vise à raviver la brillance et à corriger différents niveaux de défauts de surface.</p></div></div>
         <div class="step"><div><h3>Envie de préserver le résultat ?</h3><p>La protection céramique facilite l’entretien et apporte une protection durable à la carrosserie préparée.</p></div></div>
+      </div>
+      <div class="grid two" style="margin-top:34px">
+        <article class="card">
+          <h2>Un diagnostic avant chaque intervention</h2>
+          <p>Quelques photos permettent d’identifier les salissures, les défauts de peinture et le niveau de finition recherché. Nous confirmons ensuite la prestation adaptée et son prix avant le rendez-vous.</p>
+        </article>
+        <article class="card">
+          <h2>Un service local sur rendez-vous</h2>
+          <p>Detailing Factory intervient à Yverdon-les-Bains et dans les environs pour l’entretien, la rénovation esthétique et la protection de votre voiture. Les résultats réels sont visibles dans notre galerie avant/après.</p>
+          <p><a href="/realisations/">Découvrir nos réalisations à Yverdon-les-Bains</a></p>
+        </article>
       </div>
       <div class="actions">
         <a class="button" href="/tarifs/">Voir les tarifs</a>

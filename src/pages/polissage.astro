@@ -8,9 +8,9 @@ import { business, polishingCases, polishingGallery, polishingPrices, whatsappUr
 <BaseLayout title={`Polissage automobile à ${business.city} | Detailing Factory`} description={`Polissage automobile à ${business.city}. Brillance express, correction en une ou deux étapes et traitement des micro-rayures sur rendez-vous.`}>
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Polissage voiture dans le {business.city}</p>
-      <h1>Polissage en une étape</h1>
-      <p class="lead">Éliminer les micro-rayures, raviver la brillance et redonner de l'éclat à votre véhicule.</p>
+      <p class="eyebrow">Correction et remise en brillance</p>
+      <h1>Polissage automobile à {business.city}</h1>
+      <p class="lead">Atténuer les micro-rayures, raviver la brillance et redonner de l’éclat à votre véhicule avec un niveau de correction adapté.</p>
       <div class="hero-actions">
         <a class="button" href="/tarifs/">Voir les tarifs</a>
         <a class="button secondary" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un devis pour un polissage voiture.")}>Envoyer des photos</a>
@@ -25,6 +25,16 @@ import { business, polishingCases, polishingGallery, polishingPrices, whatsappUr
         <div class="step"><div><h3>Préparation</h3><p>Lavage, décontamination et masquage des zones sensibles.</p></div></div>
         <div class="step"><div><h3>Correction</h3><p>Brillance express, polissage en une étape ou en deux étapes selon l'objectif.</p></div></div>
         <div class="step"><div><h3>Finition</h3><p>Contrôle du résultat et recommandation de protection.</p></div></div>
+      </div>
+      <div class="grid two" style="margin-top:34px">
+        <article class="card">
+          <h2>Ce que le polissage peut corriger</h2>
+          <p>Le travail vise principalement le voile terne, les tourbillons, les hologrammes et certaines micro-rayures présentes dans la couche de vernis. Le résultat dépend de la profondeur des défauts et de l’épaisseur disponible.</p>
+        </article>
+        <article class="card">
+          <h2>Ce que le polissage ne doit pas masquer</h2>
+          <p>Une rayure profonde, un éclat de peinture ou un vernis endommagé peut nécessiter une réparation de carrosserie. Ces limites sont signalées avant l’intervention afin de définir un résultat réaliste.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -54,7 +64,10 @@ import { business, polishingCases, polishingGallery, polishingPrices, whatsappUr
           </div>
         ))}
       </div>
-      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite savoir si mon véhicule a besoin d'une brillance express, d'un polissage en une étape ou en deux étapes.")}>Demander conseil</a></div>
+      <div class="actions">
+        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite savoir si mon véhicule a besoin d'une brillance express, d'un polissage en une étape ou en deux étapes.")}>Demander conseil</a>
+        <a class="button secondary" href="/protection/">Protéger la carrosserie après le polissage</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

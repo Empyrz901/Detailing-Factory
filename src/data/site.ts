@@ -12,14 +12,19 @@ export const business = {
   streetAddress: "Avenue de Grandson 43",
   postalCode: "1400",
   addressLocality: "Yverdon-les-Bains",
+  addressRegion: "VD",
   addressCountry: "CH",
-  address: "Avenue de Grandson 43 - Yverdon-les-Bains",
+  latitude: 46.7905286,
+  longitude: 6.6283562,
+  address: "Avenue de Grandson 43, 1400 Yverdon-les-Bains",
   partner: "Partenaire Auto Center",
   locationImage: "/images/auto-center-yverdon.webp",
   instagram: "@detailing_factory_ch",
   instagramUrl: "https://www.instagram.com/detailing_factory_ch/",
   googleRating: "5.0",
-  mapUrl: "https://www.google.com/maps/search/?api=1&query=Avenue%20de%20Grandson%2043%2C%20Yverdon-les-Bains"
+  googleReviewCount: 3,
+  googleProfileUrl: "https://share.google/eGgZ0DKjtitEFDzaH",
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Detailing%20Factory%2C%20Avenue%20de%20Grandson%2043%2C%201400%20Yverdon-les-Bains"
 };
 
 export const services = [

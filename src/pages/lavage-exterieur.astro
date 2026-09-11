@@ -6,14 +6,14 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
 
 <BaseLayout
   title={`Lavage extérieur à ${business.city} | Detailing Factory`}
-  description={`Lavage extérieur automobile à domicile dans le ${business.city}. Formule Express dès 59 CHF ou lavage complet dès 119 CHF.`}
+  description={`Lavage extérieur automobile à domicile à ${business.city} et dans les environs. Formule Express dès 59 CHF ou lavage complet dès 119 CHF.`}
 >
   <section class="hero wash-hero">
     <div class="hero-layout">
       <div class="hero-inner">
-        <p class="eyebrow">Lavage extérieur à domicile dans le {business.city}</p>
-        <h1>Une voiture propre jusque dans les détails</h1>
-        <p class="lead">Un entretien express ou un nettoyage complet, directement à domicile.</p>
+        <p class="eyebrow">Service à domicile à Yverdon-les-Bains et alentours</p>
+        <h1>Lavage extérieur automobile à {business.city}</h1>
+        <p class="lead">Un entretien express ou un nettoyage complet réalisé manuellement, directement à domicile.</p>
         <div class="hero-actions">
           <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite un devis pour un lavage extérieur.")}>Réserver un lavage</a>
           <a class="button secondary" href="#formules">Voir les formules</a>
@@ -82,6 +82,23 @@ import { business, exteriorPrices, whatsappUrl } from "@/data/site";
         <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite réserver un lavage extérieur. Voici mon véhicule et la formule qui m'intéresse : ")}>Demander un rendez-vous</a>
         <a class="button secondary" href="/tarifs/">Voir tous les tarifs</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="section-inner">
+      <SectionTitle eyebrow="Lavage manuel" title="Une formule choisie selon l’état du véhicule" text="La taille du véhicule, son niveau de salissure et la finition souhaitée déterminent la formule la plus cohérente." />
+      <div class="grid two">
+        <article class="card">
+          <h2>Quand choisir la formule Express ?</h2>
+          <p>Elle convient à un entretien régulier lorsque la carrosserie ne présente pas de contamination importante. Le prélavage, le lavage manuel et le séchage permettent de retrouver rapidement un extérieur propre.</p>
+        </article>
+        <article class="card">
+          <h2>Quand choisir le lavage complet ?</h2>
+          <p>Il est recommandé lorsque les jantes, les passages de roues, les recoins ou la carrosserie demandent davantage de travail. Une décontamination est intégrée afin de préparer une surface plus nette.</p>
+        </article>
+      </div>
+      <div class="actions"><a class="button secondary" href="/polissage/">Découvrir le polissage automobile</a></div>
     </div>
   </section>
 </BaseLayout>

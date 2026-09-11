@@ -6,7 +6,7 @@ import { ceramicPrices, whatsappUrl } from "@/data/site";
 <BaseLayout title="Protection céramique à Yverdon | Detailing Factory" description="Protection céramique automobile à Yverdon-les-Bains : préparation de la carrosserie, brillance, hydrophobie et formules de 1 à 3 ans.">
   <section class="section">
     <div class="section-inner">
-      <SectionTitle as="h1" eyebrow="Protection céramique" title="Protection longue durée" text="Protection contre les agressions extérieures, les UV, les produits chimiques et les salissures." />
+      <SectionTitle as="h1" eyebrow="Protection longue durée" title="Protection céramique automobile à Yverdon-les-Bains" text="Une protection hydrophobe appliquée sur une carrosserie préparée pour faciliter l’entretien et préserver la finition." />
       <div class="benefit-row">
         <span>Hydrophobie extrême</span>
         <span>Brillance durable</span>
@@ -35,6 +35,10 @@ import { ceramicPrices, whatsappUrl } from "@/data/site";
         <article class="card"><h3>Préparation indispensable</h3><p>La carrosserie doit être nettoyée et décontaminée. Un polissage peut être recommandé lorsque des défauts sont visibles.</p></article>
         <article class="card"><h3>Durée adaptée à l’usage</h3><p>Les formules de 1, 2 ou 3 ans permettent de choisir selon le stationnement, le kilométrage et la fréquence d’entretien.</p></article>
       </div>
+      <div class="grid two" style="margin-top:24px">
+        <article class="card"><h2>Ce que la céramique ne fait pas</h2><p>Une protection céramique ne rend pas la carrosserie invulnérable aux impacts, aux rayures profondes ou à un mauvais lavage. Elle complète une préparation soignée et un entretien régulier.</p></article>
+        <article class="card"><h2>Pourquoi inspecter la peinture avant la pose ?</h2><p>La protection conserve l’état de la surface sur laquelle elle est appliquée. Lorsque des micro-rayures ou un voile terne sont visibles, un polissage préalable peut améliorer le résultat final.</p></article>
+      </div>
     </div>
   </section>
   <section class="section alt">
@@ -45,7 +49,10 @@ import { ceramicPrices, whatsappUrl } from "@/data/site";
         <div class="step"><div><h3>Application</h3><p>Pose contrôlée de la protection adaptée.</p></div></div>
         <div class="step"><div><h3>Entretien</h3><p>Conseils pour préserver le rendu et la durabilité.</p></div></div>
       </div>
-      <div class="actions"><a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite trouver la protection adaptée à mon véhicule.")}>Trouver ma protection</a></div>
+      <div class="actions">
+        <a class="button" href={whatsappUrl("Bonjour Detailing Factory, je souhaite trouver la protection adaptée à mon véhicule.")}>Trouver ma protection</a>
+        <a class="button secondary" href="/polissage/">Voir la préparation par polissage</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

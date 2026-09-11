@@ -1,12 +1,31 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import SectionTitle from "@/components/SectionTitle.astro";
+import { business } from "@/data/site";
 ---
-<BaseLayout title="Avis clients - Detailing Factory" description="Les avis clients de Detailing Factory seront publiés ici après le lancement de l’activité." robots="noindex, follow">
+<BaseLayout title="Avis clients à Yverdon | Detailing Factory" description={`Detailing Factory est noté ${business.googleRating.replace(".", ",")}/5 sur Google d’après ${business.googleReviewCount} avis clients. Consultez les avis authentiques sur la fiche Google.`}>
   <section class="section">
     <div class="section-inner">
-      <SectionTitle as="h1" eyebrow="Avis clients" title="Une page réservée aux retours authentiques" text="Les premiers avis vérifiés seront présentés ici après le lancement de l’activité." />
-      <article class="card"><h3>Transparence avant tout</h3><p>Aucune note, aucun témoignage et aucun chiffre ne seront affichés sans retour client réel et autorisation de publication.</p></article>
+      <SectionTitle as="h1" eyebrow="Avis Google" title="Avis clients de Detailing Factory à Yverdon-les-Bains" text="Les évaluations sont consultables directement sur la fiche Google de l’établissement." />
+      <div class="grid two">
+        <article class="card">
+          <p class="eyebrow">Note Google</p>
+          <h2>{business.googleRating.replace(".", ",")} / 5</h2>
+          <p><strong>{business.googleReviewCount} avis clients publiés sur Google</strong></p>
+          <p>La note et le nombre d’avis correspondent aux informations de la fiche Google au 11 septembre 2026.</p>
+          <div class="actions">
+            <a class="button" href={business.googleProfileUrl} target="_blank" rel="noopener">Lire les avis sur Google</a>
+          </div>
+        </article>
+        <article class="card">
+          <h2>Des avis consultables à leur source</h2>
+          <p>Pour préserver le contexte et l’authenticité de chaque témoignage, les textes complets, les auteurs et les dates restent accessibles sur Google.</p>
+          <p>Vous pouvez également parcourir nos résultats réels de nettoyage intérieur et de correction de carrosserie.</p>
+          <div class="actions">
+            <a class="button secondary" href="/realisations/">Voir les réalisations</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </BaseLayout>
